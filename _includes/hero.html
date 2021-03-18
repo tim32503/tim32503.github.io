@@ -6,6 +6,15 @@
         <div class="hero__content">
           <h1 class="hero__title">{{ site.data.settings.author.say-hello }}</h1>
           <p class="hero__subtitle">{{ site.data.settings.author.bio }}</p>
+          <hr class="hero__hr">
+          {% if site.data.settings.author.tags.size >= 1 %}
+            <div class="hero__tags">
+              {% for tag in site.data.settings.author.tags %}
+                <strong class="hero__tag">#{{ tag }}</strong>
+              {% endfor %}
+            </div>
+          {% else %}
+          {% endif %}
           <div class="hero__social">
             <span class="hero__social-title">Follow Me |</span>
             {% include contact-link.html %}

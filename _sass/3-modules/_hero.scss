@@ -25,6 +25,19 @@
       letter-spacing: 0.5px;
     }
 
+    .hero__hr{
+      margin: 20px 0px;
+    }
+
+    .hero__tags{
+      display: flex;
+    }
+
+    .hero__tag{
+      margin-right: 20px;
+      margin-bottom: 20px;  
+    }
+
     .hero__social {
       display: flex;
     }
