@@ -2,15 +2,15 @@
 <div class="hero">
   <div class="container">
     <div class="row">
-      <div class="col col-6 col-t-12 last-item">
+      <div class="col col-7 col-t-12 last-item">
         <div class="hero__content">
           <h1 class="hero__title">{{ site.data.settings.author.say-hello }}</h1>
           <p class="hero__subtitle">{{ site.data.settings.author.bio }}</p>
           <hr class="hero__hr">
           {% if site.data.settings.author.tags.size >= 1 %}
-            <div class="hero__tags">
+            <div class="row hero__tags">
               {% for tag in site.data.settings.author.tags %}
-                <strong class="hero__tag">#{{ tag }}</strong>
+                <strong class="col hero__tag">#{{ tag }}</strong>
               {% endfor %}
             </div>
           {% else %}
@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <div class="col col-6 col-t-12">
+      <div class="col col-5 col-t-12">
         <div class="hero__image">
           <img src="{{site.baseurl}}/images/{{ site.data.settings.author.image }}" alt="">
         </div>

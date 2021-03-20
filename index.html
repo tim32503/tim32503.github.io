@@ -6,9 +6,7 @@ layout: default
 <div class="container">
 	<div class="row">
 		<div class="col col-12">
-			{% if site.posts.size > 0 %}
 				<h4 class="lates-title">近期文章</h4>
-			{% endif %}
 		</div>
 	</div>
 </div>
@@ -19,7 +17,13 @@ layout: default
 		{% for post in paginator.posts %}
 			{% include article-content.html %}
 		{% endfor %}
+	{% else %}
+		<div class="col col-12 article">
+			<h5 class="article-without-post">目前尚無任何文章！</h5>
+		</div>
 	{% endif %}
 	</div>
 </div>
-{% include pagination.html %}
+{% if site.posts.size > 0 %}
+	{% include pagination.html %}
+{% endif %}
