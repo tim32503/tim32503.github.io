@@ -2,9 +2,13 @@
   padding: 80px 0;
   border-top: 1px solid $light-gray;
 
+  .post-box{
+    justify-content: center;
+  }
+
   .post-title {
     margin-bottom: 10px;
-    width: 500px;
+    // width: 500px;
     max-width: 100%;
     font-size: 57px;
     line-height: 70px;
@@ -100,8 +104,29 @@
   margin-bottom: 40px;
 }
 
+.post__tags1 { 
+  margin-bottom: 1.5rem;
+
+  .post__tags1-tag {
+    text-decoration: none;
+    margin-right: 0.5rem;
+    color: #888;
+    font-size: 0.875rem;
+    background-color: #EEE;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+
+    &:hover {
+      text-decoration: none;
+      color: #EEE;
+      background-color: #888;
+    }
+  }
+}
+
 .post__share {
   display: flex;
+  align-items: center;
 
   .share__title {
     margin-right: 10px;
@@ -111,6 +136,9 @@
   }
 
   .share__list {
+    margin-top: auto;
+    margin-bottom: auto;
+
     .share__item {
       display: inline-block;
       margin: 0 10px;
@@ -126,9 +154,10 @@
   }
 }
 
-.post__applause{
-  text-align: center;
+.post__applause, .post__buy-me-a-coffee{
   margin: 50px 0px;
+  display: flex;
+  justify-content: center;
 }
 
 .post__navigation {

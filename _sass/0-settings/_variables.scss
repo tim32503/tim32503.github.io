@@ -24,6 +24,7 @@ $black: #000000;
 
 // Background Colors
 $background-color: $white;
+$code-background-color: #282c34;
 
 // Body Color
 $text-color: $dark;
@@ -66,3 +67,7 @@ $font-size-h5:  18px;
 $font-size-h6:  16px;
 
 $heading-line-height: 1.2;
+
+// Code
+$code-font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+$code-font-color: #FF6F61;

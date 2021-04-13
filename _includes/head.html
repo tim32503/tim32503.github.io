@@ -15,6 +15,10 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
   <!-- Ionicons -->
   <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
+  <!-- CSS-GitHub Markdown -->
+  <link rel="stylesheet" href="/css/github-markdown.css">
+  <!-- CSS-Markdown code block highlighting -->
+  <link rel="stylesheet" href="/css/styles/atom-one-dark.css">
   <!-- 文章頁面-掌聲按鈕 -->
   <link rel="stylesheet" href="https://unpkg.com/applause-button/dist/applause-button.css">
 
@@ -23,5 +27,19 @@
     {% include main.scss %}
   {% endcapture %}
   {{ include_to_scssify | scssify }}
+
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
   </style>
 </head>

@@ -66,30 +66,30 @@ h6 {
   font-size: $font-size-h6;
 }
 
-blockquote {
-  margin: 30px -100px;
-  font-size: 28px;
-  line-height: 45px;
-  letter-spacing: 0.5px;
-  font-style: normal;
-  text-align: center;
+// blockquote {
+//   margin: 30px -100px;
+//   font-size: 28px;
+//   line-height: 45px;
+//   letter-spacing: 0.5px;
+//   font-style: normal;
+//   text-align: center;
   
-  @media only screen and (max-width: $tablet) {
-    margin: 30px 0;
-    font-size: 24px;
-    line-height: 38px;
-  }
-}
+//   @media only screen and (max-width: $tablet) {
+//     margin: 30px 0;
+//     font-size: 24px;
+//     line-height: 38px;
+//   }
+// }
 
-pre {
-  overflow: auto;
-  padding: 15px;
-  margin-bottom: 0;
-  font-size: 14px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  word-break: break-all;
-}
+// pre {
+//   overflow: auto;
+//   padding: 15px;
+//   margin-bottom: 0;
+//   font-size: 14px;
+//   white-space: pre-wrap;
+//   word-wrap: break-word;
+//   word-break: break-all;
+// }
 
 img,
 .zoom-img-wrap {
@@ -118,10 +118,23 @@ a {
     }
 }
 
-hr {
-  display: block;
-  height: 1px;
-  margin: 40px 0;
-  border: 0;
-  background: $light-gray;
+// hr {
+//   display: block;
+//   height: 1px;
+//   margin: 40px 0;
+//   border: 0;
+//   background: $light-gray;
+// }
+
+pre{
+  font-family: $code-font-family;
+  background-color: $code-background-color;
 }
+
+// code {
+//   font-family: $code-font-family;
+//   color: $code-font-color;
+//   background-color: $light-gray;
+//   border-radius: 0.25rem;
+//   padding: 0.5rem;
+// }
