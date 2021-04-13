@@ -4,7 +4,7 @@ title:  "Access Database載入錯誤"
 date:   2019-09-11 12:30:00 +0800
 image:  20190911/1/cover.png
 tags:   微軟 AccessDB 載入錯誤 OLEDB VB.NET 偵錯 錯誤排除
-description: test
+description: 當出現「Microsoft.ACE.OLEDB.12.0 提供者並未登錄於本機電腦」錯誤訊息時，可透過安裝套件排除問題。
 ---
 
 ## 問題描述
@@ -12,7 +12,9 @@ description: test
 
 發生的程式段落為【Dim test As New OleDbDataAdapter(sqlText, connString)】
 
-接著畫面就出現如同標題所寫的錯誤訊息了
+接著畫面就出現以下錯誤訊息了
+
+_Microsoft.ACE.OLEDB.12.0 提供者並未登錄於本機電腦_
 
 ## 解決方法
 1. 點選下方至微軟官網下載套件即可排除此錯誤問題
