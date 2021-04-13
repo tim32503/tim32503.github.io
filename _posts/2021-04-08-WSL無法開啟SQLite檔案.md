@@ -11,7 +11,8 @@ tags:   WSL 微軟 SQLite 無法開啟檔案
 因為龍哥說明天要用學資料庫，所以請同學們安裝 **SQLite Browser** ，於是便進到官網開始查安裝說明。
 
 > 應用程式名稱：SQLite Browser
-官網連結：[請點我](https://sqlitebrowser.org/)
+> 
+> 官網連結：[請點我](https://sqlitebrowser.org/)
 
 因應各家系統，所以安裝方式也非常及MacOS多，除了Windows及macOS可以直接下載安裝檔以外，Linux系統也可以透過指令去下載。
 
@@ -46,8 +47,10 @@ OK！沒關係，反正我嘗試開啟SQLite檔案就會知道有沒有安裝成
 看了一下上頭的錯誤訊息...
 
 > 錯誤訊息：
-Could not open database file.
-Reason: database is locked
+> 
+> Could not open database file.
+>
+> Reason: database is locked
 
 我傻眼，我什麼事情都還沒做怎麼會資料庫被鎖定啦！
 
