@@ -42,15 +42,30 @@ layout: default
         {{ content }}
       </div>
 
-      <div class="post__tags1">
-        {% if page.tags.size >= 1 %}
-          <div class="post__tags">
-            {% for tag in page.tags %}
-              <a href="{{ site.baseurl }}/tag/{{ tag | downcase }}" class="post__tags1-tag">{{ tag }}</a>
-            {% endfor %}
-          </div>
+      <div class="post__related-posts">
+        {% assign firstTag = page.tags | first %}
+        {% assign relatedCount = 0 %}
+        {% for related in site.tags[firstTag] %}
+
+        {% unless page.permalink == related.permalink %}
+          {% assign relatedCount = relatedCount | plus: 1 %}
+          <a href="{{ site.baseurl }}{{ related.permalink }}">{{ related.title }}</a><br>
+          {% endunless %}
+            
+          {% if relatedCount == 4 %}
+            {% break %}
           {% endif %}
+        {% endfor %}
       </div>
+
+      {% if page.tags.size >= 1 %}
+        <div class="post__tags">
+          {% assign sortedTags = page.tags | sort %}
+          {% for tag in sortedTags %}
+            <a href="{{ site.baseurl }}/tag/{{ tag }}" class="post__tags-tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
 
       <div class="post__share">
         <span class="share__title">立刻分享好文章&#10145;</span>
@@ -88,6 +103,13 @@ layout: default
       <div class="post__buy-me-a-coffee">
         <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="curihaosity" data-color="#FFDD00" data-emoji="☕"  data-font="Comic" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
       </div>
+
+      {% if site.data.settings.liker_id %}
+        <iframe
+        style="width: 100%; max-width: 485px; height: 240px; margin: auto; overflow: hidden; display: block; border: none;"
+        src="https://button.like.co/in/embed/{{site.data.settings.liker_id}}/button?referrer={{ page.url | absolute_url | cgi_escape }}">
+        </iframe>
+        {% endif %}
     </article>
     <!-- end post -->
     </div>

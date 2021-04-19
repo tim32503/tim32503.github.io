@@ -8,7 +8,7 @@ permalink: pretty
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll/tagging
+  # - jekyll/tagging
 
 paginate: 5
 paginate_path: "/page/:num"
@@ -29,6 +29,10 @@ include:
 tag_page_dir:         tag
 tag_page_layout:      tag_page
 tag_permalink_style:  pretty
+
+collections:
+  tag:
+    output: true
 
 sass:
   sass_dir: _sass

@@ -1,0 +1,21 @@
+---
+layout: page
+title: 標籤雲
+permalink: /tags/
+---
+{% assign tags = site.tags | sample: 2 %}
+{% for tag in tags %}
+  {% assign dividedCount = site.posts.size | times: 0.15 %}
+  {% assign fSize = tag[1].size | divided_by: dividedCount %}
+  <span style="font-size: {{ fSize }}rem; font-weight: 500; margin-right: 5px;">{{ tag[0] }}</span>
+{% endfor %}
+
+<hr>
+{% for tag in site.tags %}
+  <h3>{{ tag[0] }}: 共 {{ tag[1].size }} 篇文章</h3>
+  <ul>
+    {% for post in tag[1] %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
