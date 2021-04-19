@@ -3,7 +3,7 @@ layout: post
 title:  "WSL無法開啟SQLite檔案"
 date:   2021-04-08 17:30:00 +0800
 image:  20210408/2/cover.png
-tags:   WSL 微軟 SQLite 無法開啟檔案
+tags: WSL 微軟 SQLite 錯誤排除
 description: 因WSL環境會鎖定資料庫檔案，且目前SQLite Browser還不支援，故只能暫時先將檔案移置Windows環境下開啟。
 ---
 

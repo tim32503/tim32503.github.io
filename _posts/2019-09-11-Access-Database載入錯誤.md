@@ -3,7 +3,7 @@ layout: post
 title:  "Access Database載入錯誤"
 date:   2019-09-11 12:30:00 +0800
 image:  20190911/1/cover.png
-tags:   微軟 AccessDB 載入錯誤 OLEDB VB.NET 偵錯 錯誤排除
+tags:   微軟 AccessDB OLEDB VB.NET 錯誤排除
 description: 當出現「Microsoft.ACE.OLEDB.12.0 提供者並未登錄於本機電腦」錯誤訊息時，可透過安裝套件排除問題。
 ---
 
