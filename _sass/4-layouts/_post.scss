@@ -46,24 +46,6 @@
     }
   }
 
-  .post__tags {
-   .post__tags-tag {
-     position: relative;
-     padding-left: 15px;
-     font-weight: 700;
-     &:before {
-       content: "";
-       position: absolute;
-       top: 50%;
-       left: 0;
-       transform: translateY(-50%);
-       width: 5px;
-       height: 5px;
-       border-radius: 50%;
-       background: $dark;
-     }
-   } 
-  }
 }
 
 .post-image {
@@ -104,10 +86,10 @@
   margin-bottom: 40px;
 }
 
-.post__tags1 { 
+.post__tags {
   margin-bottom: 1.5rem;
 
-  .post__tags1-tag {
+  .post__tags-tag {
     text-decoration: none;
     margin-right: 0.5rem;
     color: #888;
@@ -121,8 +103,8 @@
       color: #EEE;
       background-color: #888;
     }
-  }
-}
+  } 
+ }
 
 .post__share {
   display: flex;
