@@ -62,7 +62,7 @@ layout: default
         <div class="post__tags">
           {% assign sortedTags = page.tags | sort %}
           {% for tag in sortedTags %}
-            <a href="{{ site.baseurl }}/tag/{{ tag }}" class="post__tags-tag">{{ tag }}</a>
+            <a href="{{ site.baseurl }}/tags/#{{ tag }}" class="post__tags-tag">{{ tag }}</a>
           {% endfor %}
         </div>
       {% endif %}
