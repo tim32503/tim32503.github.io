@@ -1,31 +1,41 @@
 ---
 layout: default
+# The page layout
 ---
-<div class="container">
-	<div class="page-title-box">
-		<div class="row">
-			<div class="col col-10 push-2 col-11 push-t-1 col-m-12 push-m-0">
-				<h1 class="page-title">{{ page.title | escape }}</h1>
-			</div>
-		</div>
-	</div>
 
-	{% if page.image %}
-	<div class="page__head">
-		<div class="page-image" style="background-image: url({{site.baseurl}}/images/{{page.image}})"></div>
-	</div>
-	{% endif %}
+<div class="row">
+  <div class="col-12 col-lg-11 col-xl-8">
+    <div id="page" class="post pb-5 pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4 mb-md-4">
+    {% if page.dynamic_title %}
+      <h1 class="dynamic-title">
+        {% if page.collection == 'tabs' %}
+          {%- capture tab_key -%}{{ page.url | split: '/' }}{%- endcapture -%}
+          {{- site.data.locales[lang].tabs[tab_key] | default: page.title -}}
+        {% else %}
+          {{- page.title -}}
+        {% endif %}
+      </h1>
+      <div class="post-content">
+        {{ content }}
+      </div>
+    {% else %}
+      {{ content }}
+    {% endif %}
+    </div> <!-- #page -->
+  </div><!-- .col-12 -->
+
+  {% include panel.html %}
+
 </div>
 
+{% if site.disqus.comments and page.comments %}
+<div class="row">
+  <div class="col-12 col-lg-11 col-xl-8">
+    <div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
 
-<div class="container">
-	<div class="row">
-		<!-- begin page -->
-		<article class="markdown-body page col col-8 col-t-10 col-m-12">
-			<div class="page__content">
-				{{ content }}
-			</div>
-		</article>
-		<!-- end page -->
-	</div>
-</div>
+    {% include disqus.html %}
+
+    </div> <!-- .pl-1 pr-1 -->
+  </div> <!-- .col-12 -->
+</div> <!-- .row -->
+{% endif %}

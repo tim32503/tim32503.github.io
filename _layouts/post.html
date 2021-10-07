@@ -1,157 +1,143 @@
 ---
 layout: default
+# The posts' layout
 ---
-<div class="container">
-  <div class="post-title-box">
-    <div class="row post-box">
-      <div class="col">
-        <span class="post__date">
-          <time datetime="{{ page.date | date_to_xmlschema }}">{{page.date | date: '%b %d, %Y'}}</time>
-        </span>
 
-        <h1 class="post-title">{{ page.title | escape }}</h1>
+{% include lang.html %}
 
-        <div class="post__info">
-          <div class="post__author">
-            <span>By</span>
-            <a href="{{ site.baseurl }}/about/" class="author-name">{{site.data.settings.author.name}}</a>
-          </div>
+<div class="row">
+
+  <div id="post-wrapper" class="col-12 col-lg-11 col-xl-8">
+
+    <div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+
+      <h1 data-toc-skip>{{ page.title }}</h1>
+
+      <div class="post-meta text-muted d-flex flex-column">
+        <!-- Published date and author -->
+        <div>
+          <span class="semi-bold">
+            {{ page.author | default: site.social.name }}
+          </span>
+          {% capture _preposition %}{{ site.data.locales[lang].post.published }}{% endcapture %}
+          {% include timeago.html date=page.date tooltip=true preposition=_preposition %}
         </div>
-      </div>
-    </div>
-  </div>
 
-  {% assign no-image = nil %}
-  {% if page.image %}
-    <div class="post__head">
-      <div class="post-image" style="background-image: url({{site.baseurl}}/images/{{page.image}})"></div>
-    </div>
-  {% else %}
-    {% assign no-image = 'post-no-image' %}
-  {% endif %}
-
-  </div>
-
-
-  <div class="container">
-  <div class="row">
-    <!-- begin post -->
-    <article class="markdown-body post {{ no-image }} col col-8 col-t-10 col-m-12">
-
-      <div class="post__content">
-        {{ content }}
-      </div>
-
-      <div class="post__related-posts">
-        {% assign firstTag = page.tags | first %}
-        {% assign relatedCount = 0 %}
-        {% for related in site.tags[firstTag] %}
-
-        {% unless page.permalink == related.permalink %}
-          {% assign relatedCount = relatedCount | plus: 1 %}
-          <a href="{{ site.baseurl }}{{ related.permalink }}">{{ related.title }}</a><br>
-          {% endunless %}
-            
-          {% if relatedCount == 4 %}
-            {% break %}
+        <div>
+          <!-- lastmod -->
+          {% if page.last_modified_at %}
+          <span>
+            {{ site.data.locales[lang].post.updated }}
+            {% include timeago.html date=page.last_modified_at class="lastmod" tooltip=true %}
+          </span>
           {% endif %}
-        {% endfor %}
+
+          <!-- read time -->
+          {% include read-time.html content=content prompt=true %}
+
+          <!-- page views -->
+          {% if site.google_analytics.pv.proxy_endpoint or site.google_analytics.pv.cache_path %}
+          <span id="pv" class="pageviews">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </span>
+          {{ site.data.locales[lang].post.pageview_measure }}
+          {% endif %}
+
+        </div>
+
+      </div> <!-- .post-meta -->
+
+      <div class="post-content">
+
+        {% if page.image.src %}
+          <img src="{{ page.image.src }}"
+            class="preview-img"
+            alt="{{ page.image.alt | default: "Preview Image" }}"
+            {% if page.image.width %}width="{{ page.image.width }}"{% endif %}
+            {% if page.image.height %}height="{{ page.image.height }}"{% endif %}>
+        {% endif %}
+
+        {{ content }}
+
       </div>
 
-      {% if page.tags.size >= 1 %}
-        <div class="post__tags">
-          {% assign sortedTags = page.tags | sort %}
-          {% for tag in sortedTags %}
-            <a href="{{ site.baseurl }}/tags/#{{ tag }}" class="post__tags-tag">{{ tag }}</a>
+      <div class="post-tail-wrapper text-muted">
+
+        <!-- categories -->
+        {% if page.categories.size > 0 %}
+
+        <div class="post-meta mb-3">
+          <i class="far fa-folder-open fa-fw mr-1"></i>
+          {% for category in page.categories %}
+            <a href='{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/'>{{ category }}</a>
+            {%- unless forloop.last -%}, {%- endunless -%}
           {% endfor %}
         </div>
-      {% endif %}
-
-      <div class="post__share">
-        <span class="share__title">立刻分享好文章&#10145;</span>
-        <ul class="share__list list-reset">
-          <li class="share__item">
-            <a class="share__facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}"
-              onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-              title="分享至 Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
-          </li>
-
-          <li class="share__item">
-            <a class="share__twitter" href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}"
-              onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-              title="分享至 Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
-          </li>
-
-          <li class="share__item">
-            <a class="share__linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}&title={{ page.title | uri_escape }}&summary={{ page.description | uri_escape }}&source={{ site.title | uri_escape }}"
-              onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" 
-              title="分享至 LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
-          </li>
-
-          <li class="share__item">
-            <a class="share__pinterest" href="http://pinterest.com/pin/create/button/?url={{ site.url }}{{ page.url }}&amp;media={{ site.url }}{{ site.baseurl }}/images/{{ page.image }}&amp;description={{ page.title | uri_escape }}"
-              onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"
-              title="分享至 Pinterest" rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="post__applause">
-        <applause-button style="width: 58px; height: 58px;" url="{{ site.baseurl }}{{page.url}}">
-      </div>
-      
-      <div class="post__buy-me-a-coffee">
-        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="curihaosity" data-color="#FFDD00" data-emoji="☕"  data-font="Comic" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
-      </div>
-
-      {% if site.data.settings.liker_id %}
-        <iframe
-        style="width: 100%; max-width: 485px; height: 240px; margin: auto; overflow: hidden; display: block; border: none;"
-        src="https://button.like.co/in/embed/{{site.data.settings.liker_id}}/button?referrer={{ page.url | absolute_url | cgi_escape }}">
-        </iframe>
         {% endif %}
-    </article>
-    <!-- end post -->
-    </div>
-  </div>
 
-  <div class="container">
-  <div class="post__navigation">
-    <div class="prev">
-      {% if page.previous.url %}
-      <a class="post__nav__image" href="{{ site.baseurl }}{{page.previous.url}}" style="background-image: url({{site.baseurl}}/images/{{page.previous.image}})"></a>
-      <h2 class="post__nav__title">
-        <i class="ion ion-md-arrow-back"></i>
-        <a href="{{ site.baseurl }}{{page.previous.url}}">{{page.previous.title}}</a>
-      </h2>
-      <p class="prev__excerpt">
-        {% if page.previous.description %}
-          {{ page.previous.description }}
-        {% else %}
-          {{ page.previous.content | strip_html | truncate: 110 }}
+        <!-- tags -->
+        {% if page.tags.size > 0 %}
+        <div class="post-tags">
+          <i class="fa fa-tags fa-fw mr-1"></i>
+          {% for tag in page.tags %}
+          <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/"
+            class="post-tag no-text-decoration" >
+            {{- tag -}}
+          </a>
+          {% endfor %}
+          </div>
         {% endif %}
-      </p>
-      {% endif %}
-    </div>
 
-    <div class="next">
-      {% if page.next.url %}
-      <a class="post__nav__image" href="{{ site.baseurl }}{{page.next.url}}" style="background-image: url({{site.baseurl}}/images/{{page.next.image}})">
-      </a>
-      <h2 class="post__nav__title">
-        <a href="{{ site.baseurl }}{{page.next.url}}">{{page.next.title}}</a>
-        <i class="ion ion-md-arrow-forward"></i>
-      </h2>
-      <p class="next__excerpt">
-        {% if page.next.description %}
-          {{ page.next.description }}
-        {% else %}
-          {{ page.next.content | strip_html | truncate: 110 }}
-        {% endif %}
-      </p>
-      {% endif %}
-    </div>
-  </div>
+        <div class="post-tail-bottom
+          d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
+          <div class="license-wrapper">
+          {% if site.data.locales[lang].copyright.license.template %}
+            {% capture _replacement %}
+            <a href="{{ site.data.locales[lang].copyright.license.link }}">
+              {{ site.data.locales[lang].copyright.license.name }}
+            </a>
+            {% endcapture %}
+            {{ site.data.locales[lang].copyright.license.template | replace: ':LICENSE_NAME', _replacement }}
+          {% endif %}
+          </div>
 
-  {% if site.data.settings.disqus-identifier %} {% include disqus-comments.html %} {% endif %}
-  </div>
+          {% include post-sharing.html %}
+
+        </div><!-- .post-tail-bottom -->
+
+      </div><!-- div.post-tail -->
+
+    </div> <!-- .post -->
+
+
+  </div> <!-- #post-wrapper -->
+
+  {% assign enable_toc = false %}
+
+  {% if site.toc and page.toc %}
+    {% if content contains '<h2' or content contains '<h3' %}
+      {% assign enable_toc = true %}
+    {% endif %}
+  {% endif %}
+
+  {% include panel.html toc=enable_toc %}
+
+</div> <!-- .row -->
+
+<div class="row">
+  <div class="col-12 col-lg-11 col-xl-8">
+    <div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+
+    {% include related-posts.html %}
+
+    {% include post-nav.html %}
+
+    {% if site.disqus.comments and page.comments %}
+      {% include disqus.html %}
+    {% endif %}
+
+    </div> <!-- #post-extend-wrapper -->
+
+  </div> <!-- .col-* -->
+
+</div> <!-- .row -->

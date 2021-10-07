@@ -1,21 +1,37 @@
-<!-- begin footer -->
-<footer class="footer">
-  <div class="container">
+<!--
+  The Footer
+-->
 
-    {% if site.data.settings.mailchimp %}
-    {% include subscribe.html %}
-    {% else %} {% endif %}
+<footer class="d-flex w-100 justify-content-center">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="footer-left">
+      <p class="mb-0">
+        © {{ 'now' | date: "%Y" }}
+        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
+        {% if site.data.locales[lang].copyright.brief %}
+        <span data-toggle="tooltip" data-placement="top"
+          title="{{ site.data.locales[lang].copyright.verbose }}">{{ site.data.locales[lang].copyright.brief }}</span>
+        {% endif %}
+      </p>
+    </div>
 
-    {% if site.data.settings.instagram %}
-    {% include instagram.html %}
-    {% else %} {% endif %}
+    <div class="footer-right">
+      <p class="mb-0">
+        {% capture _platform %}
+          <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+        {% endcapture %}
 
-    {% include contact-link.html %}
+        {% capture _theme %}
+          <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+        {% endcapture %}
 
-    <div class="copyright">
-      &copy; {{site.time | date: '%Y'}} <a href="/">{{ site.data.settings.title }}</a> — 版權所有
-      <br>
-      Powered by <a href="https://jekyllrb.com/">Jekyll</a>.</div>
-</div>
+        {{ site.data.locales[lang].meta
+          | default: 'Powered by :PLATFORM with :THEME theme.'
+          | replace: ':PLATFORM', _platform | replace: ':THEME', _theme
+        }}
+
+      </p>
+    </div>
+
+  </div> <!-- div.d-flex -->
 </footer>
-<!-- end footer -->
