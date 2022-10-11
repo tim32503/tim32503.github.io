@@ -19,11 +19,20 @@ jobs:
         with:
           fetch-depth: 0  # for posts's lastmod
 
-      - name: Setup Ruby
+      - name: 安裝 Ruby 環境
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7
+          ruby-version: 3.0
           bundler-cache: true
-
-      - name: Deploy
-        run: bash tools/deploy.sh
+          
+      - name: 安裝 Node.js 環境
+        uses: actions/setup-node@v3.5.0
+        with:
+          node-version: 16.17.0
+          
+      - name: 部署前置作業
+        run: yarn install && yarn run install-jekyll
+        
+      - name: 部署
+        run: yarn run start
+        
