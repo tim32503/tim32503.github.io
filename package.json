@@ -7,7 +7,8 @@
     "bookshop-live": "bookshop-live -b ./components -o site/_cloudcannon/bookshop-live.js",
     "jekyll": "BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll serve --source site --port 6060 --trace --unpublished",
     "start": "run-p bookshop-dev jekyll",
-    "install-jekyll": "BUNDLE_GEMFILE=site/Gemfile bundle install"
+    "install-jekyll": "BUNDLE_GEMFILE=site/Gemfile bundle install",
+    "deploy": "bash site/tools/deploy.sh"
   },
   "repository": {
     "type": "git",
