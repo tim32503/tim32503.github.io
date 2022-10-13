@@ -14,7 +14,7 @@ SITE_DIR="_site"
 
 _opt_dry_run=false
 
-_config="_config.yml"
+_config="./site/_config.yml"
 
 _no_pages_branch=false
 
@@ -52,11 +52,11 @@ build() {
   fi
 
   # build
-  JEKYLL_ENV=production bundle exec jekyll b -d "$SITE_DIR$_baseurl" --config "$_config"
+  BUNDLE_GEMFILE=site/Gemfile JEKYLL_ENV=production bundle exec jekyll b -d "$SITE_DIR$_baseurl" --config "$_config"
 }
 
 test() {
-  bundle exec htmlproofer \
+  BUNDLE_GEMFILE=site/Gemfile bundle exec htmlproofer \
     --disable-external \
     --check-html \
     --allow_hash_href \
@@ -66,6 +66,7 @@ test() {
 resume_site_dir() {
   if [[ -n $_baseurl ]]; then
     # Move the site file to the regular directory '_site'
+
     mv "$SITE_DIR$_baseurl" "${SITE_DIR}-rename"
     rm -rf "$SITE_DIR"
     mv "${SITE_DIR}-rename" "$SITE_DIR"
@@ -118,7 +119,7 @@ deploy() {
 main() {
   init
   build
-  test
+  # test
   resume_site_dir
 
   if $_opt_dry_run; then
