@@ -50,9 +50,7 @@ jobs:
       # - name: 部署
       #   run: yarn run deploy
       - name: Build site
-        run: BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: "production"
+        run: yarn run build
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v1
