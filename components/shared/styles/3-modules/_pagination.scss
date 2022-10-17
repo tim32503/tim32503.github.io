@@ -34,7 +34,7 @@
     color: rgba($dark, 0.4);
     
     &:hover {
-      i {
+      ion-icon {
         transform: none;
       }
     }
@@ -43,12 +43,12 @@
 
 .pagination__prev {
   &:hover {
-    i {
+    ion-icon {
       transform: translateX(-1px);
     }
   }
 
-  i {
+  ion-icon {
     margin-right: 2px;
     transition: .2s;
   }
@@ -57,12 +57,12 @@
 
 .pagination__next {
   &:hover {
-    i {
+    ion-icon {
       transform: translateX(1px);
     }
   }
 
-  i {
+  ion-icon {
     margin-left: 2px;
     transition: .2s;
   }

@@ -35,12 +35,12 @@
       &:hover {
         color: $text-color;
 
-        i {
+        ion-icon {
           transform: translateX(2px);
         }
       }
 
-      i {
+      ion-icon {
         width: 18px;
         height: 18px;
         margin-left: 4px;
