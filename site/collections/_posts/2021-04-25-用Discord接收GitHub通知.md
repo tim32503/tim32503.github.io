@@ -1,7 +1,7 @@
 ---
 title:  用 Discord 接收 GitHub 通知
-date:   2022-10-15 15:00:00 +0800
-image:  '/images/20221015150000/cover.png'
+date:   2021-04-25 15:00:00 +0800
+image:  '/images/20210425150000/cover.png'
 tags:   [技術筆記, GitHub, Discord, Webhook]
 ---
 
@@ -10,16 +10,16 @@ tags:   [技術筆記, GitHub, Discord, Webhook]
 ## Discord 設定
 
 首先在群組中選擇欲設定的【文字頻道】，點擊旁邊齒輪的圖示進入到設定畫面。
-![p1.png](/images/20221015150000/p1.png)
+![p1.png](/images/20210425150000/p1.png)
 
 接著於左側的選單中選擇【整合】，若之前不曾建立過 Webhook 的話，應該會看到如下圖所示【建立 Webhook】的按鈕。
-![p2.png](/images/20221015150000/p2.png)
+![p2.png](/images/20210425150000/p2.png)
 
 但如果之前有建過 Webhook 的話，則會如下圖一樣呈現出【查看 Webhook】的字樣，點進去之後點擊【新 Webhook】的按鈕亦可。
-![p3.png](/images/20221015150000/p3.png)
+![p3.png](/images/20210425150000/p3.png)
 
 成功建立後就會出現可以編輯 Webhook 資訊的區塊，當編輯完欲命名的名稱後，就可以直接點擊【複製 Webhook 網址】。
-![p4.png](/images/20221015150000/p4.png)
+![p4.png](/images/20210425150000/p4.png)
 
 看到【已複製】的訊息後，我們就可以準備開始設定 GitHub 的部分囉！
 
@@ -31,10 +31,10 @@ tags:   [技術筆記, GitHub, Discord, Webhook]
 
 登入 GitHub 並找到你想要設定的 Repo 後，點擊【Settings】頁籤。
 然後一樣選擇左側選單中的【Webhooks】，並且找到右側【Add webhook】按鈕點下去！
-![p5.png](/images/20221015150000/p5.png)
+![p5.png](/images/20210425150000/p5.png)
 
 系統沒意外會請你輸入 GitHub 密碼，確認你的身分。再來就可以開始設定 webhook 啦！接下來的幾個步驟非常重要，千萬要確認你填的資訊都沒有錯喔！
-![p6.png](/images/20221015150000/p6.png)
+![p6.png](/images/20210425150000/p6.png)
 
 1. **Payload URL**
    必填，請將剛剛從 Discord 上複製好的 webhook 網址貼於此格中，貼好後並於網址最後方加上 `/github` 的字串。
@@ -55,7 +55,7 @@ tags:   [技術筆記, GitHub, Discord, Webhook]
 
 說時遲那時快，Discord 立刻"叮"的一聲！
 沒錯！我們成功收到 commit 的通知啦！
-![p7.png](/images/20221015150000/p7.png)
+![p7.png](/images/20210425150000/p7.png)
 
 這麼方便的通知功能，快用在自己的專案團隊中吧！
 
