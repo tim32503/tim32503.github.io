@@ -2,7 +2,9 @@
 <div class="container animate">
   <div class="row" data-pagebreak="6">
     {% for post in site.posts %}
-      {% bookshop blog-card post=post %}
+      {% unless post.tags contains '技術筆記' %}
+        {% bookshop blog-card post=post %}
+      {% endunless %}
     {% endfor %}
   </div>
 </div>
