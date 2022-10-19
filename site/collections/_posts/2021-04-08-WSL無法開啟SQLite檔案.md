@@ -10,7 +10,7 @@ tags: [技術筆記, WSL, PC, SQLite, 錯誤排除]
 因為龍哥說明天要用學資料庫，所以請同學們安裝 **SQLite Browser** ，於是便進到官網開始查安裝說明。
 
 > 應用程式名稱：SQLite Browser
-
+>
 > 官網連結：[請點我](https://sqlitebrowser.org/)
 
 
@@ -49,8 +49,9 @@ OK！沒關係，反正我嘗試開啟SQLite檔案就會知道有沒有安裝成
 > 錯誤訊息：
 > 
 > Could not open database file.
->
+> 
 > Reason: database is locked
+
 我傻眼，我什麼事情都還沒做怎麼會資料庫被鎖定啦！
 
 好吧！看來只能求助Google大神了！
