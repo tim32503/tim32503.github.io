@@ -10,8 +10,8 @@ menu__settings:
       url: '/about/'
     - title: '文章'
       url: '/blog/'
-    - title: '技術筆記'
-      url: '/tag/技術筆記'
+    # - title: '技術筆記'
+    #   url: '/tag/技術筆記'
     # - title: 'Pages'
     #   submenu:
     #   - url: '/about/'
