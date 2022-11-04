@@ -191,7 +191,7 @@
 	}
 
 	img, .js-reframe {
-		border-radius: 8px;
+		// qwborder-radius: 8px;
 		overflow: hidden;
 
 		&.lightense-open {
@@ -202,6 +202,21 @@
 	.button {
 		border: none;
 		text-decoration: none;
+	}
+
+	.post__content {
+		h2:not(:first-child) {
+			margin-top: $font-size-h1;
+		}
+		
+		h3 {
+			margin-top: $font-size-h2;
+		}
+		
+		& > * {
+			margin-top: $base-font-size;
+			margin-bottom: 0;
+		}
 	}
 }
 
