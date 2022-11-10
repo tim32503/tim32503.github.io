@@ -7,10 +7,9 @@ description: 當出現「Microsoft.ACE.OLEDB.12.0 提供者並未登錄於本機
 ---
 
 ## 問題描述
-透過VB.NET的程式上傳檔案時，發生錯誤…
 
-發生的程式段落為【Dim test As New OleDbDataAdapter(sqlText, connString)】
-
+透過VB.NET的程式上傳檔案時，發生錯誤…\
+發生的程式段落為 `Dim test As New OleDbDataAdapter(sqlText, connString)`\
 接著畫面就出現以下錯誤訊息了
 
 > _Microsoft.ACE.OLEDB.12.0 提供者並未登錄於本機電腦_
@@ -20,11 +19,10 @@ description: 當出現「Microsoft.ACE.OLEDB.12.0 提供者並未登錄於本機
     > 應用程式名稱：Microsoft Access Database Engine 2010 可轉散發套件
     > 
     > 下載連結：[請點我](https://www.microsoft.com/zh-tw/download/details.aspx?id=13255)
-2. 下載並安裝64位元版本：VB程式仍舊出現相同的錯誤訊息
-3. 下載並安裝32位元版本：安裝程式告知已安裝過其他版本，需進行移除後方能安裝
-4. 將64位元版本解除安裝
-5. 重新安裝32位元版本：**Done!!**
-
+2. 下載並安裝 64 位元版本：VB 程式仍舊出現相同的錯誤訊息
+3. 下載並安裝 32 位元版本：安裝程式告知已安裝過其他版本，需進行移除後方能安裝
+4. 將 64 位元版本解除安裝
+5. 重新安裝 32 位元版本：**Done!!**
 
 ## 參考文件
 1. [[C#] 解決’Microsoft.ACE.OLEDB.12.0′ 提供者並未登錄於本機電腦…](https://dotblogs.com.tw/dragoncancer/2016/03/31/102924)
