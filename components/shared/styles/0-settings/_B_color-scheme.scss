@@ -22,6 +22,8 @@ $button-color: $background-color-alt;
 $button-background-color: $primary-color;
 $button-background-hover: darken($primary-color, 5%);
 
+$tag-background-color: lighten($green-gray, 20%);
+
 $border-color: $green-gray;
 
 $hr-color: $text-color;
