@@ -10,8 +10,6 @@ footer_menu__settings:
       url: '/about/'
     - title: '文章'
       url: '/blog/'
-    - title: '技術筆記'
-      url: '/tag/技術筆記'
 
 copyright_text_html: >-
   <p> 2022 &copy; <a href="/">顥奇心</a> | 模板設計 By <a href="https://cloudcannon.com/">CloudCannon</a> | 色彩規劃 By <a href="/">顥奇心</a></p>
