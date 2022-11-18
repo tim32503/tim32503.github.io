@@ -54,6 +54,9 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: "_site${{ steps.pages.outputs.base_path }}"
+
+      - name: 搜尋引擎初始化
+        run: yarn run algolia
         
   deploy:
     environment:
