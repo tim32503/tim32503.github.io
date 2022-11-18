@@ -8,8 +8,7 @@
     "jekyll": "BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll serve --source site --port 6060 --trace --unpublished",
     "start": "run-p bookshop-dev jekyll",
     "install-jekyll": "BUNDLE_GEMFILE=site/Gemfile bundle install",
-    "build": "BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll build --source site",
-    "algolia": "BUNDLE_GEMFILE=site/Gemfile ALGOLIA_API_KEY='aa8dfedc361fd27551e5732d810a88fd' bundle exec jekyll algolia"
+    "build": "BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll build --source site"
   },
   "repository": {
     "type": "git",
