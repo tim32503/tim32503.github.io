@@ -4,7 +4,7 @@ date:   2021-04-25 15:00:00 +0800
 image:  /assets/img/20210425150000/cover.png
 categories: [技術筆記]
 tags:   [GitHub, Discord, Webhook]
-hidden: false
+hidden: true
 ---
 
 想知道如何在 Discord 聊天室中接收到 GitHub 的事件通知嗎？本篇將帶給你完整的手把手教學！

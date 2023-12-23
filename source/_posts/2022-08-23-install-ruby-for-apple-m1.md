@@ -4,7 +4,7 @@ date: 2022-08-23 13:56:00 +0800
 image: /assets/img/20220823135600/cover.png
 categories: [技術筆記, 都是M1惹的禍？]
 tags: [Ruby, Mac M1]
-hidden: false
+hidden: true
 ---
 
 之前耳聞過 Mac M1 在環境安裝會遇到不少問題⋯⋯本篇將帶你一起解決安裝 Ruby 環境時的疑難雜症！

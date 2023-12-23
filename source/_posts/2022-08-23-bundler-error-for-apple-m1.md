@@ -4,7 +4,7 @@ date: 2022-08-23 16:35:00 +0800
 image: /assets/img/20220823163500/cover.png
 categories: [技術筆記, 都是M1惹的禍？]
 tags: [Ruby, Ruby on Rails, Mimemagic, Mysql2]
-hidden: false
+hidden: true
 ---
 
 都是 M1 惹的禍？第二彈！本篇將帶你一起解決執行 Rails 專案時可能發現的 gem 安裝失敗問題！

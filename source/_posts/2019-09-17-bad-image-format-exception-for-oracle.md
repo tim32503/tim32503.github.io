@@ -4,7 +4,7 @@ date: 2019-09-17 16:20:00 +0800
 image: /assets/img/20190917162000/cover.png
 categories: [技術筆記, 錯誤排除]
 tags: [VB.NET, Oracle]
-hidden: false
+hidden: true
 ---
 
 偵錯時出現「嘗試載入 Oracle 用戶端程式庫時傳出 BadImageFormatException。當與具有 32 位元的 Oracle 用戶端元件執行 64 位元模式安裝時，會出現此問題。」錯誤訊息時，可透過文中方法排除問題。

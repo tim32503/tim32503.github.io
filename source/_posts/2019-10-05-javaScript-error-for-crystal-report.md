@@ -4,7 +4,7 @@ date: 2019-10-05 17:11:00 +0800
 image: /assets/img/20191005171100/cover.png
 categories: [技術筆記, 錯誤排除]
 tags: [VB.NET, Crystal Report, Javascript]
-hidden: false
+hidden: true
 ---
 
 當 Crystal Report 在本機偵錯時，出現「JavaScript 執行階段錯誤」的錯誤訊息時，可透過文中方法排除問題。

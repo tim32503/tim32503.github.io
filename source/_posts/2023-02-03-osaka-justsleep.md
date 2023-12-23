@@ -4,7 +4,6 @@ date: 2023-02-03 23:23:00 +0800
 image: /assets/img/20230203232300/cover.png
 categories: [優惠折扣, KLOOK優惠折扣快報]
 tags: [KLOOK, 旅遊, 優惠, 折扣]
-hidden: false
 ---
 
 「捷絲旅」這個耳熟能詳的旅店品牌如今開始向海外拓展事業版圖，就讓我們來看看他們海外首站選擇在哪吧！

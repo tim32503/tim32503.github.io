@@ -4,7 +4,7 @@ date:   2021-04-08 17:30:00 +0800
 image:  /assets/img/20210408173000/cover.png
 categories: [技術筆記, 錯誤排除]
 tags: [Windows PC, WSL, SQLite]
-hidden: false
+hidden: true
 ---
 
 由於上課所需，開始研究如何在 WSL 中安裝 SQLite Browser，結果意外發現有問題啊！！！

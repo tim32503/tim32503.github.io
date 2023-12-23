@@ -4,7 +4,7 @@ date: 2019-09-11 12:30:00 +0800
 image: /assets/img/20190911123000/cover.png
 categories: [技術筆記, 錯誤排除]
 tags: [VB.NET, Access Database]
-hidden: false
+hidden: true
 ---
 
 當出現「Microsoft.ACE.OLEDB.12.0 提供者並未登錄於本機電腦」錯誤訊息時，可參考本文以透過安裝套件來排除問題。
