@@ -61,7 +61,7 @@ pagination_dir: page
 include: null
 exclude: null
 ignore: null
-theme: next
+theme: butterfly
 deploy:
   type: ''
 
@@ -79,7 +79,28 @@ markdown:
   enable_rules:
   disable_rules:
   plugins:
+    - markdown-it-abbr
     - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-sub
+    - markdown-it-sup
+    - markdown-it-deflist
+    - markdown-it-imsize
+    - markdown-it-mark
+    - markdown-it-regexp
+    - markdown-it-task-checkbox
+    - name: markdown-it-container
+      options: success
+    - name: markdown-it-container
+      options: info
+    - name: markdown-it-container
+      options: warning
+    - name: markdown-it-container
+      options: danger
+    - markdown-it-deflist
+    - name: markdown-it-emoji
+      options:
+        shortcuts: {}
   anchors:
     level: 2
     collisionSuffix: ''
@@ -91,8 +112,8 @@ markdown:
     separator: '-'
   images:
     lazyload: false
-    prepend_root: false
-    post_asset: false
+    prepend_root: true
+    post_asset: true
   inline: false  # https://markdown-it.github.io/markdown-it/#MarkdownIt.renderInline
 
 # 設定檔 - hexo-hide-posts
