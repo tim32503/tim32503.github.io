@@ -62,8 +62,13 @@ include: null
 exclude: null
 ignore: null
 theme: butterfly
+
+# 一鍵部署
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/tim32503/tim32503.github.io
+  branch: gh-pages
+  message: "網站更新: {{ now('DD HH:mm:ss') }}"
 
 # 設定檔 - hexo-renderer-markdown-it
 markdown:
