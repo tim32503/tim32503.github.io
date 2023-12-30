@@ -397,7 +397,7 @@ addtoany:
   enable: false
   item: facebook,twitter,wechat,sina_weibo,facebook_messenger,email,copy_link
 
-# sharethis (自製代碼，待發 PR 提出新功能)
+# sharethis
 # https://sharethis.com/
 sharethis:
   enable: true
