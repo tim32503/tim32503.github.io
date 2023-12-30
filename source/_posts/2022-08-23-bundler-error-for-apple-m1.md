@@ -6,7 +6,6 @@ categories: [技術筆記, 都是M1惹的禍？]
 tags: [Ruby, Ruby on Rails, Mimemagic, Mysql2]
 toc: true
 cover: /2022/08/23/bundler-error-for-apple-m1/cover.png
-thumbnail: /2023/02/04/bundler-error-for-apple-m1/cover.webp
 ---
 
 都是 M1 惹的禍？第二彈！本篇將帶你一起解決執行 Rails 專案時可能發現的 gem 安裝失敗問題！

@@ -5,11 +5,8 @@ updated: 2023-02-03 23:23:00 +0800
 categories: [優惠折扣, KLOOK優惠折扣快報]
 tags: [KLOOK, 旅遊, 優惠, 折扣]
 toc: true
-cover: cover.png
-thumbnail: /2023/02/03/osaka-justsleep/cover.webp
+cover: /2023/02/03/osaka-justsleep/cover.png
 ---
-
-{% asset_img cover.png %}
 
 「捷絲旅」這個耳熟能詳的旅店品牌如今開始向海外拓展事業版圖，就讓我們來看看他們海外首站選擇在哪吧！
 
