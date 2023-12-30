@@ -1,27 +1,33 @@
 ---
 title: Access Database載入錯誤
 date: 2019-09-11 12:30:00 +0800
-image: /assets/img/20190911123000/cover.png
+updated: 2019-09-11 12:30:00 +0800
 categories: [技術筆記, 錯誤排除]
 tags: [VB.NET, Access Database]
-hidden: true
+toc: true
+cover: /2019/09/11/access-database-error/cover.png
 ---
 
 當出現「Microsoft.ACE.OLEDB.12.0 提供者並未登錄於本機電腦」錯誤訊息時，可參考本文以透過安裝套件來排除問題。
 
+<!-- more -->
+
 ## 問題描述
 
-透過VB.NET的程式上傳檔案時，發生錯誤…\
-發生的程式段落為 `Dim test As New OleDbDataAdapter(sqlText, connString)`\
+透過VB.NET的程式上傳檔案時，發生錯誤…
+發生的程式段落為 `Dim test As New OleDbDataAdapter(sqlText, connString)`
 接著畫面就出現以下錯誤訊息了
 
-> _Microsoft.ACE.OLEDB.12.0 提供者並未登錄於本機電腦_
-{: .prompt-warning }
+{% note warning %}
+_Microsoft.ACE.OLEDB.12.0 提供者並未登錄於本機電腦_
+{% endnote %}
 
 ## 解決方法
 1. 點選下方至微軟官網下載套件即可排除此錯誤問題
-    > 應用程式名稱：Microsoft Access Database Engine 2010 可轉散發套件\
-    > 下載連結：[請點我](https://www.microsoft.com/zh-tw/download/details.aspx?id=13255)
+   {% note info %}
+    【應用程式名稱】Microsoft Access Database Engine 2010 可轉散發套件
+    【下載連結】{% btn https://www.microsoft.com/zh-tw/download/details.aspx?id=13255, 請點我 %}
+   {% endnote %}
 2. 下載並安裝 64 位元版本：VB 程式仍舊出現相同的錯誤訊息
 3. 下載並安裝 32 位元版本：安裝程式告知已安裝過其他版本，需進行移除後方能安裝
 4. 將 64 位元版本解除安裝
