@@ -1,7 +1,7 @@
 ---
 title: Access Database載入錯誤
-date: 2019-09-11 12:30:00 +0800
-updated: 2019-09-11 12:30:00 +0800
+date: 2019-09-11 12:30:00
+updated: 2019-09-11 12:30:00
 categories: [技術筆記, 錯誤排除]
 tags: [VB.NET, Access Database]
 toc: true

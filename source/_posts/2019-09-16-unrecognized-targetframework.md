@@ -1,7 +1,7 @@
 ---
 title: .NET Framework 組態錯誤
-date: 2019-09-16 11:18:00 +0800
-updated: 2019-09-16 11:18:00 +0800
+date: 2019-09-16 11:18:00
+updated: 2019-09-16 11:18:00
 categories: [技術筆記, 錯誤排除]
 tags: [VB.NET]
 toc: true

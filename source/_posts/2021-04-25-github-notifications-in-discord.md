@@ -1,7 +1,7 @@
 ---
 title:  用 Discord 接收 GitHub 通知
-date:   2021-04-25 15:00:00 +0800
-updated: 2021-04-25 15:00:00 +0800
+date:   2021-04-25 15:00:00
+updated: 2021-04-25 15:00:00
 categories: [技術筆記]
 tags:   [GitHub, Discord, Webhook]
 toc: true

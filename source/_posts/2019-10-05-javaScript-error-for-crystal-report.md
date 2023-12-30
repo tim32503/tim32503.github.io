@@ -1,7 +1,7 @@
 ---
 title: 水晶報表發生 JavaScript 執行階段錯誤
-date: 2019-10-05 17:11:00 +0800
-updated: 2019-10-05 17:11:00 +0800
+date: 2019-10-05 17:11:00
+updated: 2019-10-05 17:11:00
 categories: [技術筆記, 錯誤排除]
 tags: [VB.NET, Crystal Report, Javascript]
 cover: /2019/10/05/javaScript-error-for-crystal-report/cover.png

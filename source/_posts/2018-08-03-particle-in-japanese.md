@@ -1,7 +1,7 @@
 ---
 title:  日文助詞整理
-date:   2018-08-03 15:47:00 +0800
-updated:   2018-08-03 15:47:00 +0800
+date:   2018-08-03 15:47:00
+updated:   2018-08-03 15:47:00
 tags:   [外語學習, 日語, 日文助詞]
 toc: true
 cover: /2018/08/03/particle-in-japanese/cover.png

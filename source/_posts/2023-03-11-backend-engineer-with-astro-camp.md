@@ -1,6 +1,6 @@
 ---
 title:  我是後端工程師，我也要轉職！
-date:   2023-03-11 14:18:56 +0800
+date:   2023-03-11 14:18:56
 image:  /assets/img/20221210183200/cover.png
 categories: [日常生活, 進修學習]
 tags:   [ASTRO Camp, 轉職工程師, 五倍紅寶石]

@@ -1,7 +1,7 @@
 ---
 title:  WSL 無法開啟 SQLite 檔案
-date:   2021-04-08 17:30:00 +0800
-updated: 2021-04-08 17:30:00 +0800
+date:   2021-04-08 17:30:00
+updated: 2021-04-08 17:30:00
 categories: [技術筆記, 錯誤排除]
 tags: [Windows PC, WSL, SQLite]
 toc: true
