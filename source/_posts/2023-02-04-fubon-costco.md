@@ -1,6 +1,7 @@
 ---
 title: 新卡上路！富邦 Costco 聯名卡懶人包
 date: 2023-02-04 19:20:21
+updated: 2023-02-04 19:20:21
 categories: [投資理財]
 tags: [理財, 信用卡, 新卡上路]
 toc: true
@@ -32,7 +33,7 @@ thumbnail: /2023/02/04/fubon-costco/cover.webp
 
 然而在這麼多種類之中，我們今天會來討論的是打勾的部分——聯名卡。
 
-聯名卡是發卡銀行和事業體合作 **{% label success@聯合發行 %}** 的信用卡，其功能與一般信用卡並無差別，但會較具特定的商業導向， {% label success@比一般信用卡多了事業體賦予給它的各項功能或是特殊優惠，以提供回饋給持卡人 %} 。例如航空公司聯名卡、百貨公司聯名卡等等。
+聯名卡是發卡銀行和事業體合作 {% label 聯合發行 green %} 的信用卡，其功能與一般信用卡並無差別，但會較具特定的商業導向， {% label 比一般信用卡多了事業體賦予給它的各項功能或是特殊優惠，以提供回饋給持卡人 green %} 。例如航空公司聯名卡、百貨公司聯名卡等等。
 
 另外，如果有仔細觀察市面上的各種聯名卡應該就會發現，大部分的聯名卡在申辦的時候，都會告知是有年費的（少部分不用年費或是有免年費的條件），所以在辦卡前也要針對這部分三思喔！
 
@@ -64,7 +65,7 @@ thumbnail: /2023/02/04/fubon-costco/cover.webp
 - <i class="fa-regular fa-square-check"></i>  日本 COSTCO 聯名卡
 - <i class="fa-regular fa-square-check"></i>  中國 COSTCO 聯名卡
 
-{% img w-50 right https://www.fubon.com/banking/images/personal/credit_card/TW/costco.jpg %}
+<img src="https://www.fubon.com/banking/images/personal/credit_card/TW/costco.jpg" class="is-center" style="height: 250px;">
 
 眼尖的你應該發現到，上面的付款方式中仍是寫著「國泰世華 Costco 聯名卡」。沒錯喔！國泰世華銀行與好市多的合約是到 **2023/08/07** ，所以現在進好市多消費也還是使用國泰世華銀行 Costco 聯名卡，但是從 **2023/08/08** 起就會正式以「富邦 Costco 聯名卡」為獨家付款方式唷！所以喜歡到 Costco 消費的你，建議可以先辦卡辦起來，也能趁早跟上各種活動來累積好多金，之後就能用來折抵會費或是賣場消費啦～
 
@@ -79,7 +80,7 @@ thumbnail: /2023/02/04/fubon-costco/cover.webp
 以下各活動詳細內容規定請見 ☞ [產品權益網頁](https://mkt.taipeifubon.com.tw/creditcard/costco/index.html)[^fubon_costco_mkt]
 
 #### 高鐵購票優惠 最高享 12% 回饋
-活動期間：即日起 ~ 2023/12/31\
+活動期間：即日起 ~ 2023/12/31
 活動條件：
 1. 前月以指定卡別新增一般消費達指定消費門檻
 2. 當月持該卡至高鐵刷卡購票
@@ -90,12 +91,12 @@ thumbnail: /2023/02/04/fubon-costco/cover.webp
 <table>
   <thead>
     <tr>
-      <th class="text-center">購票方式</th>
-      <th class="text-center">適用卡別</th>
-      <th class="text-center">消費門檻</th>
-      <th class="text-center">回饋 % 數 (含原權益 1%)</th>
-      <th class="text-center">回饋上限</th>
-      <th class="text-center">最高消費金額</th>
+      <th>購票方式</th>
+      <th>適用卡別</th>
+      <th>消費門檻</th>
+      <th>回饋 % 數</br>(含原權益 1%)</th>
+      <th>回饋上限</th>
+      <th>最高消費金額</th>
     </tr>
   </thead>
   <tbody>
@@ -109,21 +110,21 @@ thumbnail: /2023/02/04/fubon-costco/cover.webp
         </ol>
       </td>
       <td>世界卡</td>
-      <td class="text-center" rowspan="2">$ 15,000</td>
-      <td class="text-center">12%</td>
-      <td class="text-center">$ 550</td>
-      <td class="text-center" rowspan="2">$ 5,000</td>
+      <td class="is-center" rowspan="2">$ 15,000</td>
+      <td class="is-center">12%</td>
+      <td class="is-center">$ 550</td>
+      <td class="is-center" rowspan="2">$ 5,000</td>
     </tr>
     <tr>
       <td>鈦商卡、鈦金卡</td>
-      <td class="text-center">10%</td>
-      <td class="text-center">$ 450</td>
+      <td class="is-center">10%</td>
+      <td class="is-center">$ 450</td>
     </tr>
   </tbody>
 </table>
 
 #### ８大精選通路最高享 5% 回饋
-活動期間：即日起 ~ 2023/04/30 (第一波)\
+活動期間：即日起 ~ 2023/04/30 (第一波)
 活動條件：
 1. 於８大精選通路不限金額消費
 2. 登錄此信用卡活動 ☞ [點我登錄此活動](https://www.fubon.com/banking/event/credit_card/20170718A/index.html?fromUrl=CC11202)
@@ -133,23 +134,23 @@ thumbnail: /2023/02/04/fubon-costco/cover.webp
 <table>
   <thead>
     <tr>
-      <th class="text-center">通路類別</th>
-      <th class="text-center">指定店家</th>
-      <th class="text-center">回饋 % 數 (含原權益 1%)</th>
-      <th class="text-center">回饋上限</th>
-      <th class="text-center">最高消費金額</th>
+      <th>通路類別</th>
+      <th>指定店家</th>
+      <th>回饋 % 數</br>(含原權益 1%)</th>
+      <th>回饋上限</th>
+      <th>最高消費金額</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>海外</td>
-      <td class="text-center">消費地於國外實體門市之刷卡交易</td>
-      <td class="text-center" rowspan="8">5%</td>
-      <td class="text-center" rowspan="8">$ 3,000</td>
-      <td class="text-center" rowspan="8">$ 75,000</td>
+      <td>消費地於國外實體門市之刷卡交易</td>
+      <td class="is-center" rowspan="8">5%</td>
+      <td class="is-center" rowspan="8">$ 3,000</td>
+      <td class="is-center" rowspan="8">$ 75,000</td>
     </tr>
     <tr>
-      <td>精選旅行社 + 航空</td>
+      <td>精選旅行社</br>+ 航空</td>
       <td>
         <p><strong>６大旅行社</strong></p>
         <p>雄獅旅遊 / 可樂旅遊 / ezTravel 易遊網</p>
@@ -203,7 +204,7 @@ thumbnail: /2023/02/04/fubon-costco/cover.webp
 </table>
 
 #### 指定通路 嗶富邦 Costco 聯名卡悠遊卡功能扣款享最高 10% 回饋
-活動期間：即日起 ~ 2023/12/31\
+活動期間：即日起 ~ 2023/12/31
 活動條件：
 1. 申辦富邦 Costco 悠遊聯名卡
 2. 以悠遊卡扣款消費
@@ -225,13 +226,13 @@ thumbnail: /2023/02/04/fubon-costco/cover.webp
 <table>
   <thead>
     <tr>
-      <th class="text-center">信用卡</th>
-      <th class="text-center">回饋內容</th>
+      <th>信用卡</th>
+      <th>回饋內容</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="text-center">
+      <td class="is-center">
         <img src="https://www.fubon.com/banking/images/personal/credit_card/TW/omiyage.jpg">
         <p>富邦 J 卡</p>
         {% btn https://efin.taipeifubon.com.tw/bank_bcs/c/97bbd6fd-d83c-4f58-9a07-2b318371b39e, 點我辦富邦 J 卡去 %}
@@ -253,7 +254,7 @@ thumbnail: /2023/02/04/fubon-costco/cover.webp
       </td>
     </tr>
     <tr>
-      <td class="text-center">
+      <td class="is-center">
         <img src="https://www.fubon.com/banking/images/personal/credit_card/TW/momo_1.gif">
         <p>momo 卡</p>
         {% btn https://efin.taipeifubon.com.tw/bank_bcs/c/748aacc0-98de-48d9-8bcf-cb4cacb17f65, 點我辦 momo 卡去 %}
@@ -270,7 +271,7 @@ thumbnail: /2023/02/04/fubon-costco/cover.webp
       </td>
     </tr>
     <tr>
-      <td class="text-center">
+      <td class="is-center">
         <img src="https://www.fubon.com/banking/images/personal/credit_card/TW/OpenPossible_cardface.jpg">
         <p>Open Possible 聯名卡</p>
         {% btn https://efin.taipeifubon.com.tw/bank_bcs/c/9d3dc6c7-b7d7-4de7-b4b3-8bbf55d33c92, 點我辦 Open Possible 聯名卡去 %}
