@@ -1,7 +1,217 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>顥奇心</title><meta name="author" content="兩盒"><meta name="copyright" content="兩盒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="顥奇心">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="顥奇心">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://example.com/images/avatar.jpeg">
+<meta property="article:author" content="兩盒">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/avatar.jpeg"><link rel="shortcut icon" href="/images/favicon.ico"><link rel="canonical" href="http://example.com/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://platform-api.sharethis.com/js/sharethis.js#property=6584ff94658d5100133a575b&amp;product=inline-share-buttons&amp;source=platform"></script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"這篇文章距離上次更新已經超過","messageNext":"天，因此內容可能已過時。"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: false,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '顥奇心',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-12-31 01:03:54'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">10</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header" style="background-image: url('/images/index-cover.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="顥奇心"><img class="site-icon" src="/images/logo.png"/></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">顥奇心</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover right"><a href="/2019/09/11/access-database-error/" title="Access Database載入錯誤"><img class="post-bg" src="/2019/09/11/access-database-error/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Access Database載入錯誤"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/09/11/access-database-error/" title="Access Database載入錯誤">Access Database載入錯誤</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2019-09-11T04:30:00.000Z" title="發表於 2019-09-11 12:30:00">2019-09-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/">技術筆記</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/%E9%8C%AF%E8%AA%A4%E6%8E%92%E9%99%A4/">錯誤排除</a></span></div><div class="content">當出現「Microsoft.ACE.OLEDB.12.0 提供者並未登錄於本機電腦」錯誤訊息時，可參考本文以透過安裝套件來排除問題。
+
+問題描述
+透過VB.NET的程式上傳檔案時，發生錯誤…
+發生的程式段落為 Dim test As New OleDbDataAdapter(sqlText, connString)
+接著畫面就出現以下錯誤訊息了
+Microsoft.ACE.OLEDB.12.0 提供者並未登錄於本機電腦
+
+解決方法
+
+點選下方至微軟官網下載套件即可排除此錯誤問題【應用程式名稱】Microsoft Access Database Engine 2010 可轉散發套件
+【下載連結】請點我
+
+
+下載並安裝 64 位元版本：VB 程式仍舊出現相同的錯誤訊息
+下載並安裝 32 位元版本：安裝程式告知已安裝過其他版本，需進行移除後方能安裝
+將 64 位元版本解除安裝
+重新安裝 32 位元版本：Done!!
+
+參考文件
+
+[C#] 解決’Microsoft.ACE.OLEDB.12.0′ 提供者並未登錄於本機電腦…
+Access Database Engine 2010：安裝 64  ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2018/08/03/particle-in-japanese/" title="日文助詞整理"><img class="post-bg" src="/2018/08/03/particle-in-japanese/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="日文助詞整理"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/08/03/particle-in-japanese/" title="日文助詞整理">日文助詞整理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2018-08-03T07:47:00.000Z" title="發表於 2018-08-03 15:47:00">2018-08-03</time></span></div><div class="content">為了幫助自己釐清助詞用法，上課時老師整理出一份筆記，方便我們課後複習使用。
+歡迎像我一樣初學日文的各位，自由參閱以下的整理筆記，希望能幫上一些小忙~
+（不定期更新）
+
+は
+
+  
+    說明
+    人事物的主語，常搭配～です（か）作為結語。
+  
+  
+    例句
+    
+       
+        
+          私は林（はやし、りん）です。
+          我是林。
+        
+        
+          これは携帯（けいたい）です。
+          這個是手機。
+        
+        
+          こちらは李さんの会社（かいしゃ）です。
+          這裡是李先生的公司。
+        
+      
+    
+  
+
+が
+
+  
+    說明
+    
+      
+        表示狀態或慣用語：好き（すき）、嫌い（きらい）、早い（はやい）、遅い（おそい）
+        用於修飾句主語之助詞（文法）
+        逆接（文法 / はがは句型）
+      
+    
+  
+  
+    例句
+     ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/avatar.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">兩盒</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">10</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://instagram.com/curihaosity"><i class="fab fa-instagram"></i><span>追蹤我</span></a></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/01/ai-workshop-review/" title="AI 工作坊 – 課後心得">AI 工作坊 – 課後心得</a><time datetime="2023-11-01T14:59:41.000Z" title="發表於 2023-11-01 22:59:41">2023-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/04/fubon-costco/" title="新卡上路！富邦 Costco 聯名卡懶人包"><img src="/2023/02/04/fubon-costco/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="新卡上路！富邦 Costco 聯名卡懶人包"/></a><div class="content"><a class="title" href="/2023/02/04/fubon-costco/" title="新卡上路！富邦 Costco 聯名卡懶人包">新卡上路！富邦 Costco 聯名卡懶人包</a><time datetime="2023-02-04T11:20:21.000Z" title="發表於 2023-02-04 19:20:21">2023-02-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/03/osaka-justsleep/" title="日本大阪捷絲旅限時優惠"><img src="/2023/02/03/osaka-justsleep/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="日本大阪捷絲旅限時優惠"/></a><div class="content"><a class="title" href="/2023/02/03/osaka-justsleep/" title="日本大阪捷絲旅限時優惠">日本大阪捷絲旅限時優惠</a><time datetime="2023-02-03T15:23:00.000Z" title="發表於 2023-02-03 23:23:00">2023-02-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/23/bundler-error-for-apple-m1/" title="都是 M1 惹的禍？連 Bundler 也遭殃？！"><img src="/2022/08/23/bundler-error-for-apple-m1/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="都是 M1 惹的禍？連 Bundler 也遭殃？！"/></a><div class="content"><a class="title" href="/2022/08/23/bundler-error-for-apple-m1/" title="都是 M1 惹的禍？連 Bundler 也遭殃？！">都是 M1 惹的禍？連 Bundler 也遭殃？！</a><time datetime="2022-08-23T08:35:00.000Z" title="發表於 2022-08-23 16:35:00">2022-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/23/install-ruby-for-apple-m1/" title="都是 M1 惹的禍？輕鬆帶你搞定 Ruby 環境安裝！"><img src="/2022/08/23/install-ruby-for-apple-m1/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="都是 M1 惹的禍？輕鬆帶你搞定 Ruby 環境安裝！"/></a><div class="content"><a class="title" href="/2022/08/23/install-ruby-for-apple-m1/" title="都是 M1 惹的禍？輕鬆帶你搞定 Ruby 環境安裝！">都是 M1 惹的禍？輕鬆帶你搞定 Ruby 環境安裝！</a><time datetime="2022-08-23T05:56:00.000Z" title="發表於 2022-08-23 13:56:00">2022-08-23</time></div></div></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>網站資訊</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章數目 :</div><div class="item-count">12</div></div><div class="webinfo-item"><div class="item-name">本站訪客數 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站總訪問量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最後更新時間 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-12-30T17:03:54.104Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 兩盒</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="返回頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
