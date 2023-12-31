@@ -599,6 +599,8 @@ google_adsense:
 # --------------------------------------
 
 site_verification:
+  - name: ir-site-verification-token  # Impact.com
+    content: 740691780
   # - name: google-site-verification
   #   content: xxxxxx
   # - name: baidu-site-verification
