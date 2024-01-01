@@ -3415,6 +3415,9 @@ h1.page-title + .tag-cloud-list {
 #post-comment .comment-wrap > div:nth-child(2) {
   display: none;
 }
+#post-comment .comment-wrap .disqus_thread > iframe:first-child {
+  display: none;
+}
 #post-comment.move #switch-btn {
   background-color: #ff7242;
 }
