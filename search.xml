@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>AI 工作坊 – 課後心得</title>
+      <link href="/2023/11/01/ai-workshop-review/"/>
+      <url>/2023/11/01/ai-workshop-review/</url>
+      
+        <content type="html"><![CDATA[<p>自從 ChatGPT 爆紅後，人們開始更加關注 AI 接下來的發展與應用，甚至 2023 年更被譽為「生成式 AI 元年」。各領域也不斷地尋找 AI 適用的應用情境，思考著能如何用來提升工作效率及增加利潤。然而，身為工程師的我們當面對這樣的新技術誕生時，更不該因為害怕被新技術取代而拒絕去認識它；反之，我們更該嘗試認識它，看能藉由何種方式來幫助提升自我的價值。</p><span id="more"></span><h2 id="課程資訊">課程資訊</h2><div class="note info flat"><p><strong>大語言模型 LLM 應用開發工作坊</strong></p><p>【講師】張文鈿（ihower）<br>【時間】2023/10/15 (日) 10:00 ~ 17:00<br>【地點】五倍紅寶石<br>【簡介】<a href="https://5xcampus.com/courses/ai-workshop">請點我</a></p></div><h2 id="麻瓜的有勇無謀">麻瓜的有勇無謀</h2><p>在開始上課前，我想我對於 AI 的認識就和普羅大眾差不多吧！</p><p>透過 ChatGPT<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> 、 Google Bard<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> 等工具協助我們寫文章、找答案，幾乎都快成了 24 小時 On Call 、不須下班的私人家教；在 DALL·E2<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> 、 Midjourney<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> 的畫布上用提示詞揮灑出屬於我們的創作，誤以為自己是 21 世紀的畢卡索再世。一晃眼間，許多的 AI 應用網站推陳出新，便已令眾人愛不釋手、陶醉其中。</p><p>而比較深入一些的認識，應該就是開始了解「何謂提示詞」了吧！</p><p>畢竟在網路上各式各樣的咒語心得文唾手可得，像是教會你如何「成為宮崎駿第二人」、「快速解開程式難題」等等。這類型的分享文章好似咒語百科般數之不盡，多到不禁讓人幻想著是否自己信手捻來便能像哈利波特一樣與「那個人」交戰。網友們口中所謂的「咒語」正是生成式 AI 使用到的「提示詞（Prompt）」，但我們像麻瓜般的有勇無謀，只是一味的使出咒語來自娛娛人，卻不知其中潛藏的危險性。</p><h2 id="符咒學，上課了！">符咒學，上課了！</h2><p>起初，講者先是帶著我們認識何謂提示詞。我們都知道使用咒語需要手持魔杖、專心一志並且大聲唸出咒語，而工程師想使用 LLM 也只需要透過呼叫 API 並且帶入所需參數及提示詞後便能完成。例如，在相同的提示詞（咒語）之下，若帶入的「溫度（temperature）」數值越接近 1 時，API 的回應及隨機性會更富有創造力；反之，越接近 0 的回覆則更接近機器人般的制式回答。原來只是簡單調整其中這麼一項參數，就能使 AI 的回答更加人性化！</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">user_message = <span class="string">&quot;小明愛吃什麼? &quot;</span></span><br><span class="line"></span><br><span class="line">messages = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>,</span><br><span class="line">        <span class="string">&quot;content&quot;</span>: user_message</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">response = get_completion(messages, temperature=<span class="number">0.9</span>)  <span class="comment"># 可以改看看溫度</span></span><br><span class="line"><span class="built_in">print</span>(response)  <span class="comment"># 我不知道小明喜歡吃什麼，因為我不認識他。每個人都有自己喜歡的食物偏好，只有小明自己知道他愛吃什麼。</span></span><br></pre></td></tr></table></figure><h2 id="大腦高速運轉後的收穫">大腦高速運轉後的收穫</h2><p>講者帶來的內容著實豐富，從基礎到進階、玲琅滿目。隨著課程進度來到進階篇章時，大腦也早已處於高速運轉的狀態中。講師在介紹完「提示詞工程」後，便帶領我們認識 LLM 的幾種常見應用，像是：ChatBot 對話應用、摘要轉錄、QA 應用等等。</p><img src="/2023/11/01/ai-workshop-review/p1.png" class="" title="【圖片出處】edX LLM Application through Production 課程"><p>而大家最感到興趣的莫過於從早上就開始敲碗的應用主題－－「語意搜尋 + QA 應用」，簡單來說就是先使用程式去搜尋各種相關內容後，再將收集到的資訊及問題拿去問 LLM ，最後就可以得到所需的答案了！整個問答流程前後完全不需要耗費太多時間，也難怪在 ChatGPT 剛問世不久時就已經有客服人員開始擔心自己會不會面臨失業的困境。</p><p>在認識完幾種常見應用後，該如何將 LLM 妥善運用至各種情境中，讓其成為一大助力，我想這便是軟體工程師的價值其一所在吧！</p><h2 id="結語">結語</h2><p>這堂課確實為我打開 AI 世界大門，儘管尚未能完全掌握課程的全部精華，但至少在我的心中已經埋下一顆對於 AI 好奇心的種子。課程結束不是終點，學海無涯，唯勤是岸，期許自己將講師的豐富教材仔細著墨後，能促使自己躍上另一境界！如果對於 AI 這門學問也甚是好奇，不妨藉由這堂課程帶領你一探箇中奧妙，相信定有所獲的！</p><h2 id="參考來源">參考來源</h2><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p><a href="https://openai.com/chatgpt">對話式 AI 工具 – ChatGPT by OpenAI</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p></li><li id="fn2" class="footnote-item"><p><a href="https://bard.google.com/chat">對話式 AI 工具 – Bard by Google</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p></li><li id="fn3" class="footnote-item"><p><a href="https://openai.com/dall-e-2">生成式 AI 繪圖工具 – DALL·E 2 by OpenAI</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p></li><li id="fn4" class="footnote-item"><p><a href="https://www.midjourney.com/home">生成式 AI 繪圖工具 – Midjourney by Midjourney</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> AI </tag>
+            
+            <tag> LLM </tag>
+            
+            <tag> 五倍學院 </tag>
+            
+            <tag> 工作坊 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>新卡上路！富邦 Costco 聯名卡懶人包</title>
+      <link href="/2023/02/04/fubon-costco/"/>
+      <url>/2023/02/04/fubon-costco/</url>
+      
+        <content type="html"><![CDATA[<p>萬眾矚目的 <strong>富邦 Costco 聯名卡</strong> 在 <strong>2023/02/01</strong> 正式發行啦！就讓我們來了解一下這張充滿話題性的卡片吧！</p><span id="more"></span><div class="note warning flat"><p>來來來！需要的朋友跟我來！<br>辦卡連結 ☞ <a class="btn-beautify " href="https://ebank.taipeifubon.com.tw/EXT/curl/w7XOZYOd"   title="點我辦卡去"><span>點我辦卡去</span></a></p></div><h2 id="聯名卡是什麼？">聯名卡是什麼？</h2><p>信用卡的種類有非常多，根據金融監督管理委員會的介紹<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，我們可以知道信用卡有以下幾種：</p><ul><li><i class="fa-regular fa-square"></i>  普通卡</li><li><i class="fa-regular fa-square"></i>  金卡</li><li><i class="fa-regular fa-square"></i>  白金卡</li><li><i class="fa-regular fa-square"></i>  商務卡、公司卡</li><li><i class="fa-regular fa-square"></i>  簽帳卡</li><li><i class="fa-regular fa-square"></i>  認同卡</li><li><i class="fa-regular fa-square-check"></i>  聯名卡</li><li><i class="fa-regular fa-square"></i>  附卡</li><li><i class="fa-regular fa-square"></i>  學生卡</li></ul><p>然而在這麼多種類之中，我們今天會來討論的是打勾的部分——聯名卡。</p><p>聯名卡是發卡銀行和事業體合作 <mark class="hl-label green">聯合發行</mark>  的信用卡，其功能與一般信用卡並無差別，但會較具特定的商業導向， <mark class="hl-label green">比一般信用卡多了事業體賦予給它的各項功能或是特殊優惠，以提供回饋給持卡人</mark>  。例如航空公司聯名卡、百貨公司聯名卡等等。</p><p>另外，如果有仔細觀察市面上的各種聯名卡應該就會發現，大部分的聯名卡在申辦的時候，都會告知是有年費的（少部分不用年費或是有免年費的條件），所以在辦卡前也要針對這部分三思喔！</p><h2 id="Costco-聯名卡新舊爭霸戰——富邦-V-S-國泰">Costco 聯名卡新舊爭霸戰——富邦 V.S. 國泰</h2><p>由於國泰世華銀行並未順利取得 Costco 聯名卡的續約權，因此合約只到 2023/08/07 為止，而後續將由富邦銀行接棒為廣大的 Costco 會員卡友們服務。</p><p>信用卡在各家銀行的眾多商品中，相當於是一塊敲門磚，親民、容易讓人接觸及上手的一項金融商品，銀行更能夠藉此繼續向卡友們再行銷。<br>所以透過推出高回饋、好用無腦的信用卡，亦或是爭取聯名合作的機會，都能幫銀行帶來龐大的客戶量及可觀的發卡量。<br>尤其這次國泰 Costco 聯名卡的數量約莫 300 萬，對富邦來說更是能讓自己在信用卡戰場上躍升一大步。</p><table><thead><tr><th style="text-align:left">項目 / 銀行</th><th style="text-align:center">富邦</th><th style="text-align:center">國泰</th></tr></thead><tbody><tr><td style="text-align:left">Costco 店內消費</td><td style="text-align:center">👑 2%</td><td style="text-align:center">1%</td></tr><tr><td style="text-align:left">Costco 店外一般消費</td><td style="text-align:center">👑 1%</td><td style="text-align:center">0.5%</td></tr><tr><td style="text-align:left">Costco 加油站</td><td style="text-align:center">3%</td><td style="text-align:center">3%</td></tr><tr><td style="text-align:left">Costco 線上購物</td><td style="text-align:center">👑 3%</td><td style="text-align:center">Ｘ</td></tr><tr><td style="text-align:left">保費消費優惠 2 擇 1</td><td style="text-align:center">👑 0.5% / 最高 12 期分期 0 利率<br>(不限富邦人壽)</td><td style="text-align:center">Ｘ</td></tr><tr><td style="text-align:left">自動扣繳會費</td><td style="text-align:center">Ｏ</td><td style="text-align:center">Ｏ</td></tr><tr><td style="text-align:left">回饋點數折抵賣場消費 &amp; 年費</td><td style="text-align:center">Ｏ</td><td style="text-align:center">Ｏ</td></tr></tbody></table><h2 id="為什麼需要富邦-Costco-聯名卡？">為什麼需要富邦 Costco 聯名卡？</h2><p>根據官網描述， Costco 實體賣場 &amp; 線上購物可以接受下列付款方式：</p><ul><li><i class="fa-regular fa-square-check"></i>  國泰世華 COSTCO 聯名卡</li><li><i class="fa-regular fa-square-check"></i>  國泰世華 Visa 金融卡</li><li><i class="fa-regular fa-square-check"></i>  美國花旗 COSTCO 聯名卡</li><li><i class="fa-regular fa-square-check"></i>  加拿大 COSTCO 聯名卡</li><li><i class="fa-regular fa-square-check"></i>  墨西哥 COSTCO 聯名卡</li><li><i class="fa-regular fa-square-check"></i>  韓國 COSTCO 聯名卡</li><li><i class="fa-regular fa-square-check"></i>  日本 COSTCO 聯名卡</li><li><i class="fa-regular fa-square-check"></i>  中國 COSTCO 聯名卡</li></ul><img src="https://www.fubon.com/banking/images/personal/credit_card/TW/costco.jpg" class="is-center" style="height: 250px;"><p>眼尖的你應該發現到，上面的付款方式中仍是寫著「國泰世華 Costco 聯名卡」。沒錯喔！國泰世華銀行與好市多的合約是到 <strong>2023/08/07</strong> ，所以現在進好市多消費也還是使用國泰世華銀行 Costco 聯名卡，但是從 <strong>2023/08/08</strong> 起就會正式以「富邦 Costco 聯名卡」為獨家付款方式唷！所以喜歡到 Costco 消費的你，建議可以先辦卡辦起來，也能趁早跟上各種活動來累積好多金，之後就能用來折抵會費或是賣場消費啦～</p><p>另外依照上述的付款方式列表，我們也能先猜測除了「富邦 Costco 聯名卡」以外，甚至也有機會開放讓會員們以「富邦 Visa 金融卡」來消費喔！</p><h3 id="早鳥辦卡享優惠-累積回饋抵年費">早鳥辦卡享優惠 累積回饋抵年費</h3><p>蛤？你說為什麼要這麼早就辦「富邦 Costco 聯名卡」嗎？<br>那是因為我發現富邦有推出不少的<strong>高回饋活動</strong>，想讓會員們能趁現在就先透過店外消費來累積好多金。但有些活動是有名額限制的，當然想卡位就要趁早啦！</p><p>辦卡連結 ☞ <a class="btn-beautify " href="https://ebank.taipeifubon.com.tw/EXT/curl/w7XOZYOd"   title="點我辦卡去"><span>點我辦卡去</span></a><br>以下各活動詳細內容規定請見 ☞ <a href="https://mkt.taipeifubon.com.tw/creditcard/costco/index.html">產品權益網頁</a><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p><h4 id="高鐵購票優惠-最高享-12-回饋">高鐵購票優惠 最高享 12% 回饋</h4><p>活動期間：即日起 ~ 2023/12/31<br>活動條件：</p><ol><li>前月以指定卡別新增一般消費達指定消費門檻</li><li>當月持該卡至高鐵刷卡購票</li><li>登錄此信用卡活動 ☞ <a href="https://www.fubon.com/banking/event/credit_card/20170718A/index.html?fromUrl=CC11202">點我登錄此活動</a></li></ol><p>滿足以上條件，即可享有指定 % 數的好多金回饋！</p><table>  <thead>    <tr>      <th>購票方式</th>      <th>適用卡別</th>      <th>消費門檻</th>      <th>回饋 % 數</br>(含原權益 1%)</th>      <th>回饋上限</th>      <th>最高消費金額</th>    </tr>  </thead>  <tbody>    <tr>      <td rowspan="2">        <ol>          <li>高鐵網站</li>          <li>高鐵APP</li>          <li>高鐵臨櫃</li>          <li>高鐵自動售票機</li>        </ol>      </td>      <td>世界卡</td>      <td class="is-center" rowspan="2">$ 15,000</td>      <td class="is-center">12%</td>      <td class="is-center">$ 550</td>      <td class="is-center" rowspan="2">$ 5,000</td>    </tr>    <tr>      <td>鈦商卡、鈦金卡</td>      <td class="is-center">10%</td>      <td class="is-center">$ 450</td>    </tr>  </tbody></table><h4 id="８大精選通路最高享-5-回饋">８大精選通路最高享 5% 回饋</h4><p>活動期間：即日起 ~ 2023/04/30 (第一波)<br>活動條件：</p><ol><li>於８大精選通路不限金額消費</li><li>登錄此信用卡活動 ☞ <a href="https://www.fubon.com/banking/event/credit_card/20170718A/index.html?fromUrl=CC11202">點我登錄此活動</a></li></ol><p>滿足以上即可享最高 5% 好多金回饋 (含原產品權益 1%)！</p><table>  <thead>    <tr>      <th>通路類別</th>      <th>指定店家</th>      <th>回饋 % 數</br>(含原權益 1%)</th>      <th>回饋上限</th>      <th>最高消費金額</th>    </tr>  </thead>  <tbody>    <tr>      <td>海外</td>      <td>消費地於國外實體門市之刷卡交易</td>      <td class="is-center" rowspan="8">5%</td>      <td class="is-center" rowspan="8">$ 3,000</td>      <td class="is-center" rowspan="8">$ 75,000</td>    </tr>    <tr>      <td>精選旅行社</br>+ 航空</td>      <td>        <p><strong>６大旅行社</strong></p>        <p>雄獅旅遊 / 可樂旅遊 / ezTravel 易遊網</p>        <p>東南旅行社 / 山富旅遊 / 鳳凰旅遊</p>        <p><strong>６大航空</strong></p>        <p>長榮航空 / 中華航空 / 國泰航空</p>        <p>立榮航空 / 華信航空 / 星宇航空</p>      </td>    </tr>    <tr>      <td>精選節能商店</td>      <td>        <p>WeMo Scooter / TESLA充電費 / GoShare</p>        <p>Gogoro / NetworkGogoro / eMoving</p>        <p>iRent / Zipcar / Go Smart / USPACE</p>      </td>    </tr>    <tr>      <td>精選有機商店</td>      <td>        <p>義美食品 / 聖德科斯 / 台灣主婦聯盟</p>        <p>棉花田 / 馬可先生麵包坊 / 健康食彩</p>        <p>永豐餘生技 / 安永鮮物 / 無毒農</p>        <p>天和鮮物 / 無毒的家 / 柑仔店 / 有機緣地</p>      </td>    </tr>    <tr>      <td>精選健身商店</td>      <td>        <p>LES MILLS / World Gym / 健身工廠</p>        <p>迪卡儂 / 摩曼頓運動用品 / 尚智運動用品</p>        <p>萬岳體育用品 / 微笑運動用品 / 城市綠洲</p>      </td>    </tr>    <tr>      <td>精選保健商店</td>      <td>        <p>大樹藥局 / 佑全保健藥妝 / 躍獅藥局</p>        <p>丁丁藥局 / 啄木鳥藥局 / 杏一醫療用品 / 維康醫療用品</p>      </td>    </tr>    <tr>      <td>精選影音</td>      <td>Netflix / myVideo / Disney+</td>    </tr>    <tr>      <td>精選藥妝</td>      <td>康是美 / 屈臣氏</td>    </tr>  </tbody></table><h4 id="指定通路-嗶富邦-Costco-聯名卡悠遊卡功能扣款享最高-10-回饋">指定通路 嗶富邦 Costco 聯名卡悠遊卡功能扣款享最高 10% 回饋</h4><p>活動期間：即日起 ~ 2023/12/31<br>活動條件：</p><ol><li>申辦富邦 Costco 悠遊聯名卡</li><li>以悠遊卡扣款消費</li><li>於全台「天仁茶業」、「肯德基」、「摩斯漢堡」消費，而「天仁茶業」包括<strong>天仁茗茶</strong>、<strong>天仁喫茶趣</strong>、<strong>喫茶ToGo</strong>、<strong>CHAFFEE</strong></li></ol><h2 id="總結">總結</h2><p>首先，這篇文章也不是什麼業配文啦！小弟我還沒有那種資格啦！🤣</p><p>主要是因為前陣子看到不少文章開始討論起這張信用卡，想說可以趁著這機會多搜集一些關於這張富邦 Costco 聯名卡的資料，也順手整理成現在你們看到的這篇文章，減少自己爬文的困擾～殊不知研究到後來自己也跟著辦了一張啦！</p><p>只是在比較的過程中，發現這張卡與先前過去發行的 Costco 聯名卡有著不少差異，評估起來感覺蠻有優勢的！<br>不僅有高回饋，還有許多店外通路的使用機會，這些特色讓這張卡片不再侷限於 Costco 店內，累積好多金會更加容易！</p><p>然而我們家中有不少生活備品也習慣在 Costco 採購，但礙於過去會員過期失效，需要採買時總需透過親友代購，總有些不好意思。<br>因此這次我就透過表嫂的連結也給它辦卡辦下去啦！常去 Costco 消費的朋友們，非常建議卡片直接辦起來！最後還是要提醒一下，由於此張聯名卡會有產生年費 &amp; 會費，不同卡片的年費 &amp; 會費也有所不同，大家這部分要記得留意喔！</p><h2 id="其他富邦熱門信用卡">其他富邦熱門信用卡</h2><table>  <thead>    <tr>      <th>信用卡</th>      <th>回饋內容</th>    </tr>  </thead>  <tbody>    <tr>      <td class="is-center">        <img src="https://www.fubon.com/banking/images/personal/credit_card/TW/omiyage.jpg">        <p>富邦 J 卡</p>        <a class="btn-beautify " href="https://efin.taipeifubon.com.tw/bank_bcs/c/97bbd6fd-d83c-4f58-9a07-2b318371b39e"   title="點我辦富邦 J 卡去"><span>點我辦富邦 J 卡去</span></a>      </td>      <td>        <ul>          <li>🇯🇵🇰🇷日韓旅遊最高 5% 回饋</li>          <li>日本消費還抽商務艙來回機票</li>          <li>Apple Pay 綁定 J 卡加值日本 Suica 或 PASMO 交通卡享最高 10% 回饋</li>          <li>加油最高 5%</li>          <li>一卡通大眾運輸 2%</li>          <li>指定共享汽機車最高 10%</li>          <li>LINE 禮物最高 25%</li>          <li>富邦銀行臨櫃出示 J 卡提領 / 兌換日圓現鈔 💴 享優惠</li>        </ul>        <p>          🌐 更多優惠 ☞ <a href="https://efin.taipeifubon.com.tw/bank_bcs/l/2234">點我了解</a>        </p>      </td>    </tr>    <tr>      <td class="is-center">        <img src="https://www.fubon.com/banking/images/personal/credit_card/TW/momo_1.gif">        <p>momo 卡</p>        <a class="btn-beautify " href="https://efin.taipeifubon.com.tw/bank_bcs/c/748aacc0-98de-48d9-8bcf-cb4cacb17f65"   title="點我辦 momo 卡去"><span>點我辦 momo 卡去</span></a>      </td>      <td>        <ul>          <li>2023/03/31 前 momo 通路筆筆 5% 回饋無上限，千大品牌最高還有 10% 回饋</li>          <li>店外指定支付 / 錢包、海外消費享最高 5%</li>          <li>指定航空 / 旅行社最高 10% 回饋</li>        </ul>        <p>          🌐 更多優惠 ☞ <a href="https://efin.taipeifubon.com.tw/bank_bcs/l/2235">點我了解</a>        </p>      </td>    </tr>    <tr>      <td class="is-center">        <img src="https://www.fubon.com/banking/images/personal/credit_card/TW/OpenPossible_cardface.jpg">        <p>Open Possible 聯名卡</p>        <a class="btn-beautify " href="https://efin.taipeifubon.com.tw/bank_bcs/c/9d3dc6c7-b7d7-4de7-b4b3-8bbf55d33c92"   title="點我辦 Open Possible 聯名卡去"><span>點我辦 Open Possible 聯名卡去</span></a>      </td>      <td>        <ul>          <li>行車加油 ⛽️、影音娛樂 🎬、台灣大哥大電信費 📱 享最高 5.5%</li>          <li>國內外 10 大旅遊交通再加碼最高 10%</li>          <li>綁定 icash Pay 於星巴克、多拿滋、COLD STONE、聖娜、21 風味館餐飲通路享 5% 儲值金回饋</li>        </ul>        <p>          🌐 更多優惠 ☞ <a href="https://efin.taipeifubon.com.tw/bank_bcs/l/2236">點我了解</a>        </p>      </td>    </tr>  </tbody></table><h2 id="參考資料">參考資料</h2><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p><a href="https://moneywise.fsc.gov.tw/tabf/FW/FW6_page_A.html">金融監督管理委員會 金融智慧網 - 信用卡的種類</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p></li><li id="fn2" class="footnote-item"><p><a href="https://mkt.taipeifubon.com.tw/creditcard/costco/index.html">富邦 Costco 聯名卡 - 早早換 好事加倍多</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
+      
+      
+      <categories>
+          
+          <category> 投資理財 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 理財 </tag>
+            
+            <tag> 信用卡 </tag>
+            
+            <tag> 新卡上路 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>日本大阪捷絲旅限時優惠</title>
+      <link href="/2023/02/03/osaka-justsleep/"/>
+      <url>/2023/02/03/osaka-justsleep/</url>
+      
+        <content type="html"><![CDATA[<p>「捷絲旅」這個耳熟能詳的旅店品牌如今開始向海外拓展事業版圖，就讓我們來看看他們海外首站選擇在哪吧！</p><span id="more"></span><div class="note info flat"><p>台灣知名旅店－捷絲旅的版圖正式進軍海外，首站插旗在國人的熱門旅遊城市－日本大阪🇯🇵</p><p><strong>獨家折扣銷售快閃日期 ► 2/3 ~ 2/17</strong><br>限時優惠，錯過不再！<br>可訂購的入住期間 ► 3/1 (正式開幕) ~ 11/30</p><p>火速手刀搶購🔥 <i class="fa-solid fa-right-long"></i> <a class="btn-beautify " href="https://www.klook.com/zh-TW/hotels/detail/1110519-just-sleep-osaka-shinsaibashi/?aid=4563"   title="訂房連結請點我"><span>訂房連結請點我</span></a></p></div><h2 id="亮點簡介">亮點簡介</h2><img src="/2023/02/03/osaka-justsleep/%E5%A4%96%E8%A7%80.jpeg" class=""><p>「捷絲旅大阪心齋橋」是捷絲旅品牌進軍日本的首家據點，飯店位置緊鄰熱鬧繁華的心齋橋商圈，商圈內美食店舖林立，房客步行即可沉浸式的體驗在地潮流文化與熱情好客的風土民情。</p><div class="gallery-container" data-type="data" data-button="true">      <div class="gallery-data">[{"url":"/2023/02/03/osaka-justsleep/內部-1.jpeg","alt":""},{"url":"/2023/02/03/osaka-justsleep/內部-2.jpeg","alt":""}]</div>      <div class="gallery-items">      </div>    </div><p>踏入飯店大廳，映入眼簾的是充滿心齋橋美國村的設計牆面，帶領旅人彷彿走進 70 年代的時光隧道般，使人能在這忘卻旅途的辛勞。</p><div class="gallery-container" data-type="data" data-button="true">      <div class="gallery-data">[{"url":"/2023/02/03/osaka-justsleep/雅心客房.png","alt":""},{"url":"/2023/02/03/osaka-justsleep/雅心客房-1.jpeg","alt":""},{"url":"/2023/02/03/osaka-justsleep/雅齋客房.png","alt":""},{"url":"/2023/02/03/osaka-justsleep/雅齋客房-1.jpeg","alt":""},{"url":"/2023/02/03/osaka-justsleep/雅橋客房.png","alt":""},{"url":"/2023/02/03/osaka-justsleep/雅橋客房-1.png","alt":""},{"url":"/2023/02/03/osaka-justsleep/衛浴.jpeg","alt":""}]</div>      <div class="gallery-items">      </div>    </div><p>飯店對外交通四通八達，心齋橋站、本町站、筋堺本町及長堀橋站等四大地鐵車站近在咫尺，便利性十足，絕對是旅人規劃大阪行時的住宿首選。</p><ol><li>飯店位置緊鄰熱鬧繁華的 <mark class="hl-label orange">心齋橋商圈</mark> </li><li>飯店 <mark class="hl-label orange">對外交通四通八達</mark>  ，離心齋橋站、本町站、筋堺本町及長堀橋站等四大地鐵車站都超級近！</li><li>飯店設計概念充滿大阪在地元素外，捷絲旅所使用的備品也一律嚴選以 <mark class="hl-label orange">關西在地產品</mark>  為優先考量！</li></ol><h2 id="住宿資訊">住宿資訊</h2><div class="note info no-icon flat"><p><strong>日本大阪捷絲旅</strong></p><p>【地址】大阪市府大阪市中央区南船場2丁目9-15<br>【網站】<a href="https://www.klook.com/zh-TW/hotels/detail/1110519-just-sleep-osaka-shinsaibashi/?aid=4563">訂房連結請點我</a><br>【電話】+81 06-6251-3666</p></div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.082145761014!2d135.50145265060453!3d34.677876180344384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e732cf4e075f%3A0x694b8e7a9a101f3f!2z5o2357Wy5peFIOWkp-mYquW_g-m9i-apiw!5e0!3m2!1szh-TW!2stw!4v1675413493027!5m2!1szh-TW!2stw" width="100%" height="450" style="border:0; margin: 0 auto; display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>]]></content>
+      
+      
+      <categories>
+          
+          <category> 優惠折扣 </category>
+          
+          <category> KLOOK優惠折扣快報 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> KLOOK </tag>
+            
+            <tag> 旅遊 </tag>
+            
+            <tag> 優惠 </tag>
+            
+            <tag> 折扣 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>都是 M1 惹的禍？連 Bundler 也遭殃？！</title>
+      <link href="/2022/08/23/bundler-error-for-apple-m1/"/>
+      <url>/2022/08/23/bundler-error-for-apple-m1/</url>
+      
+        <content type="html"><![CDATA[<p>都是 M1 惹的禍？第二彈！本篇將帶你一起解決執行 Rails 專案時可能發現的 gem 安裝失敗問題！</p><span id="more"></span><h2 id="前言">前言</h2><p>好不容易搞定了 Ruby 安裝，接下來當然就要開始起專案啦！</p><h2 id="安裝過程">安裝過程</h2><h3 id="Mimemagic-安裝失敗">Mimemagic 安裝失敗</h3><p>專案資料夾打開後，起手式當然是</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bundle install</span><br></pre></td></tr></table></figure><img src="/2022/08/23/bundler-error-for-apple-m1/p1.png" class=""><p>嗯？哈囉？ 為什麼又送我紅字啊—— 😱😱😱<br>稍加閱讀了終端上的紅字後，選擇先按照紅字建議去嘗試</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install mimemagic -v &#x27;0.3.10&#x27; --source &#x27;https://rubygems.org/&#x27;</span><br></pre></td></tr></table></figure><img src="/2022/08/23/bundler-error-for-apple-m1/p2.png" class=""><p>Rake failed? 怎麼又失敗了<br>只好把剛剛出現過的紅字複製後，拿去請教 Google 大神<br>大神表示：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install shared-mime-info</span><br></pre></td></tr></table></figure><img src="/2022/08/23/bundler-error-for-apple-m1/p3.png" class=""><p>執行後，如果有成功的話就會看到這樣的啤酒訊息，Safe！</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">🍺  /opt/homebrew/Cellar/shared-mime-info/2.2: 86 files, 4.6MB</span><br></pre></td></tr></table></figure><h3 id="Mysql2-安裝失敗">Mysql2 安裝失敗</h3><p>安裝完 Mimemagic 後，再重新 bundle 一次</p><img src="/2022/08/23/bundler-error-for-apple-m1/p4.png" class=""><p>真棒🙄 又出意外了呢⋯⋯<br>無奈的我只好繼續拿著紅字去拜大神，<br>大神開示：確認 <code>mysql</code> 、 <code>openssl</code> 、 <code>zstd</code> 是否安裝，再安裝 <code>mysql2</code></p><p>因為我是透過 homebrew 安裝，如果需要安裝特定版本的 mysql，要使用下方指令</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql@5.7 openssl zstd</span><br></pre></td></tr></table></figure><p>緊接著再安裝 <code>mysql2</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install mysql2 -v &#x27;0.5.2&#x27; -- --with-mysql-config=$(brew --prefix mysql)@5.7/bin/mysql_config --with-ldflags=&quot;-L$(brew --prefix zstd)/lib -L$(brew --prefix openssl)/lib&quot; --with-cppflags=-I$(brew --prefix openssl)/include</span><br></pre></td></tr></table></figure><p>指令中的 <code>0.5.2</code> 可替換成需安裝的 <code>mysql2</code> 版本號，另外因為我安裝的 <code>mysql</code> 是有指定 <code>5.7</code> 這個版本，所以在上方指令中需加入 <code>@5.7</code> ，若你沒有指定版本的話，可移除。<br>最後只要再重新 bundle 一次就成功啦，可喜可賀 🎉</p><h2 id="參考資料">參考資料</h2><ol><li><a href="https://github.com/mimemagicrb/mimemagic/issues/162" title="Mimemagic Issue #162">Mimemagic Issue #162</a></li><li><a href="https://gist.github.com/fernandoaleman/385aad12a18fe50cf5fd1e988e76fd63" title="How to install mysql2 gem on m1 Mac">How to install mysql2 gem on m1 Mac</a></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技術筆記 </category>
+          
+          <category> 都是M1惹的禍？ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ruby </tag>
+            
+            <tag> Ruby on Rails </tag>
+            
+            <tag> Mimemagic </tag>
+            
+            <tag> Mysql2 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>都是 M1 惹的禍？輕鬆帶你搞定 Ruby 環境安裝！</title>
+      <link href="/2022/08/23/install-ruby-for-apple-m1/"/>
+      <url>/2022/08/23/install-ruby-for-apple-m1/</url>
+      
+        <content type="html"><![CDATA[<p>之前耳聞過 Mac M1 在環境安裝會遇到不少問題⋯⋯本篇將帶你一起解決安裝 Ruby 環境時的疑難雜症！</p><span id="more"></span><h2 id="前言">前言</h2><p>新公司報到第一天，領到公司配發的工作機⋯⋯</p><p><strong>太讚啦！居然是 M1 新機欸！嗯～真香！</strong></p><p>除了認識同事外，報到不外乎要建置開發環境，想到這邊突然有種不好的預感 🤨</p><h2 id="聲明">聲明</h2><div class="note warning flat"><p>因本文僅適用於 Mac 環境，還請 Windows 的朋友們尋找其他篇文章協助解決環境安裝問題</p></div><h2 id="安裝過程">安裝過程</h2><h3 id="安裝-RVM">安裝 RVM</h3><p>首先我們先安裝 RVM (Ruby Version Manager，Ruby 版本管理器) ，這是為了幫助我們可以管理不同版本的 Ruby 環境。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\curl -sSL https://get.rvm.io | bash -s stable</span><br></pre></td></tr></table></figure><p>上述的這個指令也可以在 <a href="https://rvm.io/">RVM 首頁</a> 找到唷！<br>安裝完成後，我們可以查詢 RVM 的版本號，以確認是否成功安裝。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm -v</span><br></pre></td></tr></table></figure><p>如果有正確安裝成功的話，輸入指令後會如下圖，得到現在的版本號。</p><img src="/2022/08/23/install-ruby-for-apple-m1/p1.png" class=""><h3 id="安裝-Ruby">安裝 Ruby</h3><div class="note info flat"><p>操作 RVM 的相關指令，可以在 <a href="https://rvm.io/rvm/cli">https://rvm.io/rvm/cli</a> 查得到，或是終端機直接輸入指令 <code>rvm help</code></p></div><p>安裝前，我們可以查詢一下目前可安裝的 Ruby 種類及版本號有哪些。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm list known</span><br></pre></td></tr></table></figure><p>確認好想安裝的 Ruby 版本後就可以輸入指令開始安裝！</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm install 2.5  # rvm install [版本號]</span><br></pre></td></tr></table></figure><p>依照你所想安裝的版本，可以任意替換後方版本號的數值<br>跑跑跑，登愣！！！</p><img src="/2022/08/23/install-ruby-for-apple-m1/p2.png" class=""><p>沒想到預感成真，居然給我跑紅字出來！果不其然開始安裝不久就遇到問題 🙄<br>OK Fine! 立刻有請 Google 大神～ Do Re Mi So！</p><p>佩服佩服，才剛膜拜完立刻得到解法！<br>我們來調整一下剛剛的安裝指令</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CFLAGS=&quot;-Wno-error=implicit-function-declaration&quot; rvm install 2.5</span><br></pre></td></tr></table></figure><img src="/2022/08/23/install-ruby-for-apple-m1/p3.png" class=""><p>恭喜🎉🎉🎉<br>出現 <code>Install of ruby-2.5.8 - #complete</code> 就代表安裝完成啦！你也可以再用 <code>ruby -v</code> 檢查現在的 Ruby 版本號是不是對應剛剛所安裝的！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技術筆記 </category>
+          
+          <category> 都是M1惹的禍？ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ruby </tag>
+            
+            <tag> Mac M1 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>用 Discord 接收 GitHub 通知</title>
+      <link href="/2021/04/25/github-notifications-in-discord/"/>
+      <url>/2021/04/25/github-notifications-in-discord/</url>
+      
+        <content type="html"><![CDATA[<p>想知道如何在 Discord 聊天室中接收到 GitHub 的事件通知嗎？本篇將帶給你完整的手把手教學！</p><span id="more"></span><h2 id="Discord-設定">Discord 設定</h2><p>首先在群組中選擇欲設定的 <code>文字頻道</code> ，點擊旁邊齒輪的圖示進入到設定畫面。</p><img src="/2021/04/25/github-notifications-in-discord/p1.png" class=""><p>接著於左側的選單中選擇 <code>整合</code> ，若之前不曾建立過 Webhook 的話，應該會看到如下圖所示 <code>建立 Webhook</code> 的按鈕。</p><img src="/2021/04/25/github-notifications-in-discord/p2.png" class=""><p>但如果之前有建過 Webhook 的話，則會如下圖一樣呈現出 <code>查看 Webhook</code> 的字樣，點進去之後點擊 <code>新 Webhook</code> 的按鈕亦可。</p><img src="/2021/04/25/github-notifications-in-discord/p3.png" class=""><p>成功建立後就會出現可以編輯 Webhook 資訊的區塊，當編輯完欲命名的名稱後，就可以直接點擊 <code>複製 Webhook 網址</code> 。</p><img src="/2021/04/25/github-notifications-in-discord/p4.png" class=""><p>看到 <code>已複製</code> 的訊息後，我們就可以準備開始設定 GitHub 的部分囉！</p><div class="note warning flat"><p>複製好的 webhook 網址請注意不要任意公開散布出去給他人，因為只要取得此網址後，他人即有權限可傳送訊息至該頻道中。</p></div><h2 id="GitHub-設定">GitHub 設定</h2><p>登入 GitHub 並找到你想要設定的 Repo 後，點擊 <code>Settings</code> 頁籤。<br>然後一樣選擇左側選單中的【Webhooks】，並且找到右側 <code>Add webhook</code> 按鈕點下去！</p><img src="/2021/04/25/github-notifications-in-discord/p5.png" class=""><p>系統沒意外會請你輸入 GitHub 密碼，確認你的身分。再來就可以開始設定 webhook 啦！接下來的幾個步驟非常重要，千萬要確認你填的資訊都沒有錯喔！</p><img src="/2021/04/25/github-notifications-in-discord/p6.png" class=""><ol><li><strong>Payload URL</strong><br>必填，請將剛剛從 Discord 上複製好的 webhook 網址貼於此格中，貼好後並於網址最後方加上 <code>/github</code> 的字串。</li><li><strong>Content type</strong><br>內容類型請選擇 <code>application/json</code></li><li><strong>Events</strong><br>這邊有三種事件類型可被觸發，個人建議可以選擇第２項 <code>Send me everything.</code>，這樣就能接收到所有事件的通知。</li><li><strong>Active</strong><br>請勾選此欄以確保當有事件被觸發的時候，系統會發送詳細資訊到我們的 Discord 頻道中。</li></ol><p>以上都確認填寫完畢後，就可以大膽地點擊綠色的 <code>Add webhook</code> 按鈕啦！<br>到這邊就完成我們所有的設定啦！ ⁽⁽٩(๑˃̶͈̀ ᗨ ˂̶͈́)۶⁾⁾</p><h2 id="測試">測試</h2><p>最後最後我們來簡單的測試一下，確認功能是不是正常運作！<br>我們隨意編輯一個檔案 (這邊我用 <code>README.md</code> 測試) 後並 commit 送出。</p><p>說時遲那時快，Discord 立刻「叮🔔」的一聲！<br>沒錯！我們成功收到 commit 的通知啦！</p><img src="/2021/04/25/github-notifications-in-discord/p7.png" class=""><p>這麼方便的通知功能，快用在自己的專案團隊中吧！</p><h2 id="參考資料">參考資料</h2><ol><li><a href="https://docs.github.com/en/developers/webhooks-and-events/creating-webhooks">GitHub Docs-Creating webhooks</a></li><li><a href="https://qiita.com/Papillon6814/items/7bfd95cbd1b5a80afb92">DiscordにGithubのリポジトリの変更通知を送る方法</a></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技術筆記 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> GitHub </tag>
+            
+            <tag> Discord </tag>
+            
+            <tag> Webhook </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>WSL 無法開啟 SQLite 檔案</title>
+      <link href="/2021/04/08/cannot-open-sqlite-file-in-wsl/"/>
+      <url>/2021/04/08/cannot-open-sqlite-file-in-wsl/</url>
+      
+        <content type="html"><![CDATA[<p>由於上課所需，開始研究如何在 WSL 中安裝 SQLite Browser，結果意外發現有問題啊！！！</p><span id="more"></span><h2 id="安裝">安裝</h2><p>因為龍哥說明天要用學資料庫，所以請同學們安裝 <strong>SQLite Browser</strong> ，於是便進到官網開始查安裝說明。</p><div class="note info flat"><p>【應用程式名稱】SQLite Browser<br>【官網連結】<a class="btn-beautify " href="https://sqlitebrowser.org/"   title="請點我"><span>請點我</span></a></p></div><p>因應各家系統，所以安裝方式也非常及 MacOS 多，除了 Windows 及 macOS 可以直接下載安裝檔以外，Linux 系統也可以透過指令去下載。</p><p>由於課程開始時，龍哥建議使用 Windows 系統的學生們可以安裝 WSL 來作為 Ruby 開發環境。所以這邊應用程式的安裝，我就打算直接透過 Linux 的終端機來安裝，而不是直接下載 Windows 安裝檔。而我的 Linux 系統是使用 Ubuntu 20.04 LTS ，我就採用 APT 指令方式下載。</p><p>首先我們先更新 APT 的 cache</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure><p>更新完成後再繼續接著安裝應用程式本體！</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install sqlitebrowser</span><br></pre></td></tr></table></figure><p>不過想小小吐槽一下的是 APT 指令安裝完成後，這個應用程式不會回傳安裝完成之類的訊息…<br>讓人不太確定到底安裝好了沒啊😅😅😅</p><p>OK！沒關係，反正我嘗試開啟 SQLite 檔案就會知道有沒有安裝成功了吧！</p><p>下一步我們透過檔案總管的方式來找到想要開啟的 SQLite 檔案，剛好我們手邊有建立一個練習用的 Rails 專案，我們直接用裡面的 SQLite 檔案來測試看看。</p><img src="/2021/04/08/cannot-open-sqlite-file-in-wsl/p1.png" class=""><p>看到 SQLite 檔案就給他用力地點下去！！！</p><img src="/2021/04/08/cannot-open-sqlite-file-in-wsl/p2.png" class=""><p>⚠️⚠️⚠️ 登愣 ⚠️⚠️⚠️<br>為什麼會出現錯誤訊息啦！雖然我很開心有安裝成功😭<br>看了一下上頭的錯誤訊息…<br>我傻眼，我什麼事情都還沒做怎麼會資料庫被鎖定啦！</p><div class="note warning flat"><p>Could not open database file.<br>Reason: database is locked</p></div><p>好吧！看來只能求助 Google 大神了！<br>最後找到一篇比較近期發問的文章，進去閱讀後才發現原來是 SQLite Browser 的 GitHub 頁面。</p><p><a href="https://github.com/sqlitebrowser/sqlitebrowser/issues/2142">SQLite Browser fails to open a DB inside a wsl2 installation #2142</a></p><p>看完整串網友們的討論後，結論是目前沒救😭<br>簡單來說目前 WSL 的關係，會導致所有儲存在其之下的 sqlite 檔案被鎖定，無法正常開啟。但開發者大大們目前似乎有想法，該如何解決這個問題，所以期待後續他們的更新改版囉！<br>如果現階段真的需要開啟檔案的話，可以先將 SQLite 檔案移至 Windows 環境底下的任一位置後 (例如桌面)，就可以直接點擊開啟該資料庫囉！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技術筆記 </category>
+          
+          <category> 錯誤排除 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Windows PC </tag>
+            
+            <tag> WSL </tag>
+            
+            <tag> SQLite </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>水晶報表發生 JavaScript 執行階段錯誤</title>
+      <link href="/2019/10/05/javaScript-error-for-crystal-report/"/>
+      <url>/2019/10/05/javaScript-error-for-crystal-report/</url>
+      
+        <content type="html"><![CDATA[<p>當 Crystal Report 在本機偵錯時，出現「JavaScript 執行階段錯誤」的錯誤訊息時，可透過文中方法排除問題。</p><span id="more"></span><h2 id="問題描述">問題描述</h2><p>Crystal Report在本機偵錯時，可能發生此錯誤訊息，如下圖1：</p><img src="/2019/10/05/javaScript-error-for-crystal-report/p1.png" class=""><h2 id="解決方法">解決方法</h2><ol><li>至 <code>C:\inetpub\wwwroot\aspnet_client\system_web\4_0_30319</code> 底下找到 <code>crystalreportviewers13</code> 這個資料夾後，複製貼上到開發中的專案資料夾中</li></ol>  <img src="/2019/10/05/javaScript-error-for-crystal-report/p2.png" class=""><ol start="2"><li>並在欲開啟報表的網頁中（如圖1中所示的APP_0004_PR.aspx），於標籤中加入以下語法：</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&#x27;&lt;%=ResolveUrl(&quot;~/crystalreportviewers13/js/crviewer/crv.js&quot;)%&gt;&#x27;</span> type=<span class="string">&quot;text/javascript&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure><ol start="3"><li>重新嘗試開啟報表後，即可於本機中正常顯示，Done!!</li></ol>  <img src="/2019/10/05/javaScript-error-for-crystal-report/p3.png" class=""><h2 id="參考文件">參考文件</h2><ol><li><a href="https://www.cnblogs.com/muzinian/p/4721690.html">解決crystal report水晶報表在瀏覽器提示bobj未定義的錯誤</a></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技術筆記 </category>
+          
+          <category> 錯誤排除 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> VB.NET </tag>
+            
+            <tag> Crystal Report </tag>
+            
+            <tag> Javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Oracle 用戶端程式庫載入錯誤</title>
+      <link href="/2019/09/17/bad-image-format-exception-for-oracle/"/>
+      <url>/2019/09/17/bad-image-format-exception-for-oracle/</url>
+      
+        <content type="html"><![CDATA[<p>偵錯時出現「嘗試載入 Oracle 用戶端程式庫時傳出 BadImageFormatException。當與具有 32 位元的 Oracle 用戶端元件執行 64 位元模式安裝時，會出現此問題。」錯誤訊息時，可透過文中方法排除問題。</p><span id="more"></span><h2 id="問題描述">問題描述</h2><p>嘗試偵錯時，Log 描述中出現下列訊息</p><div class="note warning flat"><p>嘗試載入 Oracle 用戶端程式庫時傳出 BadImageFormatException。<br>當與具有 32 位元的 Oracle 用戶端元件執行 64 位元模式安裝時，會出現此問題。</p></div><h2 id="解決方法">解決方法</h2><p>設定程式執行在 x86 模式下即可，參考以下設定</p><ol><li>開啟 <code>組態管理員</code><img src="/2019/09/17/bad-image-format-exception-for-oracle/p1.png" class=""></li><li>點選在 <code>使用中的方案平台</code> 下拉清單後，按 <code>新增</code><img src="/2019/09/17/bad-image-format-exception-for-oracle/p2.png" class=""></li><li>在 <code>輸入或選擇新平台</code> 選擇 <code>x86</code> 後按 <code>確定</code><img src="/2019/09/17/bad-image-format-exception-for-oracle/p3.png" class=""></li><li>設定完成後，重新嘗試進行偵錯：Done!!</li></ol><h2 id="參考文件">參考文件</h2><ol><li><a href="https://dotblogs.com.tw/chou/archive/2011/10/11/41156.aspx">出現 [嘗試載入 Oracle 用戶端程式庫時傳出 BadImageFormatException。當與具有 32 位元的 Oracle 用戶端元件執行 64 位元模式安裝時，會出現此問題。]，該如何處理?</a></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技術筆記 </category>
+          
+          <category> 錯誤排除 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> VB.NET </tag>
+            
+            <tag> Oracle </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>.NET Framework 組態錯誤</title>
+      <link href="/2019/09/16/unrecognized-targetframework/"/>
+      <url>/2019/09/16/unrecognized-targetframework/</url>
+      
+        <content type="html"><![CDATA[<p>出現「無法辨認的屬性 ‘targetFramework’。請注意，屬性名稱必須區分大小寫」的錯誤訊息時，可嘗試透過文中方法排除問題。</p><span id="more"></span><h2 id="問題描述">問題描述</h2><div class="note danger flat"><p>剖析器錯誤訊息：<br>無法辨認的屬性 ‘targetFramework’。請注意，屬性名稱必須區分大小寫。</p></div><h2 id="解決方法">解決方法</h2><p>調整目標 Framework 至 <code>.NET Framework 4</code> 即可</p><ol><li>嘗試重開專案並偵錯：仍舊顯示錯誤訊息</li><li>對 <code>專案</code> 點選右鍵更改 <code>屬性</code> 中 <code>建置</code> 的 <code>目標 Framework</code> 設定：Done!!</li></ol><img src="/2019/09/16/unrecognized-targetframework/p1.png" class="">]]></content>
+      
+      
+      <categories>
+          
+          <category> 技術筆記 </category>
+          
+          <category> 錯誤排除 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> VB.NET </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Access Database載入錯誤</title>
+      <link href="/2019/09/11/access-database-error/"/>
+      <url>/2019/09/11/access-database-error/</url>
+      
+        <content type="html"><![CDATA[<p>當出現「Microsoft.ACE.OLEDB.12.0 提供者並未登錄於本機電腦」錯誤訊息時，可參考本文以透過安裝套件來排除問題。</p><span id="more"></span><h2 id="問題描述">問題描述</h2><p>透過VB.NET的程式上傳檔案時，發生錯誤…<br>發生的程式段落為 <code>Dim test As New OleDbDataAdapter(sqlText, connString)</code><br>接著畫面就出現以下錯誤訊息了</p><div class="note warning flat"><p><em>Microsoft.ACE.OLEDB.12.0 提供者並未登錄於本機電腦</em></p></div><h2 id="解決方法">解決方法</h2><ol><li>點選下方至微軟官網下載套件即可排除此錯誤問題<div class="note info flat"><p>【應用程式名稱】Microsoft Access Database Engine 2010 可轉散發套件<br>【下載連結】<a class="btn-beautify " href="https://www.microsoft.com/zh-tw/download/details.aspx?id=13255" title="請點我"><span>請點我</span></a></p></div></li><li>下載並安裝 64 位元版本：VB 程式仍舊出現相同的錯誤訊息</li><li>下載並安裝 32 位元版本：安裝程式告知已安裝過其他版本，需進行移除後方能安裝</li><li>將 64 位元版本解除安裝</li><li>重新安裝 32 位元版本：<strong>Done!!</strong></li></ol><h2 id="參考文件">參考文件</h2><ol><li><a href="https://dotblogs.com.tw/dragoncancer/2016/03/31/102924">[C#] 解決’Microsoft.ACE.OLEDB.12.0′ 提供者並未登錄於本機電腦…</a></li><li><a href="http://sharedderrick.blogspot.com/2013/04/access-database-engine-2010-64-32.html">Access Database Engine 2010：安裝 64 位元與 32 位元版本的驅動程式在同一作業系統上</a></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技術筆記 </category>
+          
+          <category> 錯誤排除 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> VB.NET </tag>
+            
+            <tag> Access Database </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>日文助詞整理</title>
+      <link href="/2018/08/03/particle-in-japanese/"/>
+      <url>/2018/08/03/particle-in-japanese/</url>
+      
+        <content type="html"><![CDATA[<p>為了幫助自己釐清助詞用法，上課時老師整理出一份筆記，方便我們課後複習使用。<br>歡迎像我一樣初學日文的各位，自由參閱以下的整理筆記，希望能幫上一些小忙~<br>（不定期更新）</p><span id="more"></span><h2 id="は">は</h2><table>  <tr>    <th>說明</th>    <td>人事物的主語，常搭配～です（か）作為結語。</td>  </tr>  <tr>    <th>例句</th>    <td>       <ul>        <li>          <p>私は林（はやし、りん）です。</p>          <p>我是林。</p>        </li>        <li>          <p>これは携帯（けいたい）です。</p>          <p>這個是手機。</p>        </li>        <li>          <p>こちらは李さんの会社（かいしゃ）です。</p>          <p>這裡是李先生的公司。</p>        </li>      </ul>    </td>  </tr></table><h2 id="が">が</h2><table>  <tr>    <th>說明</th>    <td>      <ul>        <li>表示狀態或慣用語：好き（すき）、嫌い（きらい）、早い（はやい）、遅い（おそい）</li>        <li>用於修飾句主語之助詞（文法）</li>        <li>逆接（文法 / はがは句型）</li>      </ul>    </td>  </tr>  <tr>    <th>例句</th>    <td>      <ul>        <li><p>天気（てんき）がいいです。</p><p>天氣很好。</p></li>        <li><p>鳥（とり）が鳴（な）いているのが聞こえます。</p><p>可以聽得見鳥叫聲。</p></li>        <li><p>しえ先生が作っていたのはケーキです。</p><p>しえ先生做的是蛋糕。</p></li>        <li><p>私の会社は台南ですが、林さんの会社は台北です。</p><p>我的公司在台南，而林先生的公司在台北。</p></li>      </ul>    </td>  </tr>  <tr>    <th>補充</th>    <td>      <p>天氣後面僅只搭配好／壞，若要形容感受，則需搭配時間點。 <p>      <p>例如：今日（きょう）は暑い（あつい）です。</p>    </td>  </tr></table><h2 id="に">に</h2><table>  <tr>    <th>說明</th>    <td>      <ol>        <li>時間點</li>        <li>目的地</li>      </ol>    </td>  </tr>  <tr>    <th>例句</th>    <td>      <ul>        <li><p>４時に授業があります。</p><p>四點有課。</p></li>        <li><p>会社に（へ）行きます。</p><p>去公司。</p></li>      </ul>    </td>  </tr></table><h2 id="へ">へ</h2><table>  <tr>    <th>說明</th>    <td>移動方向性助詞。大多接「移動動詞」，如：行きます、来ます、帰ります</td>  </tr>  <tr>    <th>例句</th>    <td><p>会社へ行きます。</p><p>去公司。</p><p>（但這裡的「へ」有往指定方向去進行動作的感覺）</p></td>  </tr></table><h2 id="で">で</h2><table>  <tr>    <th>說明</th>    <td>      <ol>        <li>工具、方法（不可接人可以做到的方法）</li>        <li>限定且大範圍</li>      </ol>    </td>  </tr>  <tr>    <th>例句</th>    <td>      <ul>        <li><p>バスで学校（がっこう）へ行きます。</p><p>搭公車去學校。</p></li>        <li><p>公園（こうえん）で散歩（さんぽ）します。</p><p>在公園裡散步。</p></li>      </ul>    </td>  </tr></table><h2 id="も">も</h2><table>  <tr>    <th>說明</th>    <td>也，僅限用於肯定及疑問句。</td>  </tr>  <tr>    <th>例句</th>    <td><p>私も学生（がくせい）です。</p><p>我也是學生。</p></td>  </tr></table><h2 id="と">と</h2><table>  <tr>    <th>說明</th>    <td>和</td>  </tr>  <tr>    <th>例句</th>    <td><p>私は友達（ともだち）と一緒（いっしょ）に映画館（えいがかん）へ行きます。</p><p>我和朋友一起去電影院。</p></td>  </tr></table><h2 id="か">か</h2><table>  <tr>    <th>說明</th>    <td>多放於句尾，表示疑問語氣</td>  </tr>  <tr>    <th>例句</th>    <td><p>あなたは先生ですか。</p><p>你是老師嗎？</p></td>  </tr></table><h2 id="を">を</h2><table>  <tr>    <th>說明</th>    <td>承接動作</td>  </tr>  <tr>    <th>例句</th>    <td><p>ご飯を食べます。</p><p>吃飯。</p></td>  </tr></table><h2 id="から～まで">から～まで</h2><table>  <tr>    <th>說明</th>    <td>從～到～，多用於時間、地點</td>  </tr>  <tr>    <th>例句</th>    <td>      <ul>        <li><p>授業（じゅぎょう）は１時から２時までです。</p><p>課程從１點開始到２點結束。</p></li>        <li><p>私はバスで家から会社まで行きます。</p><p>我搭公車去公司。</p></li>      </ul>    </td>  </tr></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 外語學習 </tag>
+            
+            <tag> 日語 </tag>
+            
+            <tag> 日文助詞 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
