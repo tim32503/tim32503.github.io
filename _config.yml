@@ -140,3 +140,14 @@ hide_posts:
   # Generators in the blocklist can *not* access the hidden posts.
   # The allowlist has higher priority than the blocklist, if both set.
   # blocklist_generators: ['*']
+
+# 設定檔 - hexo-generator-sitemap
+
+sitemap:
+  path: 
+    - sitemap.xml
+  # template: ./sitemap_template.xml
+  # template_txt: ./sitemap_template.txt
+  rel: false
+  tags: true
+  categories: true
