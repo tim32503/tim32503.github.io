@@ -842,25 +842,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  let disqus = document.querySelector('#disqus_thread')
-  const removeAds = setInterval(() => {
-    let iframes = document.querySelectorAll('iframe')
+  // let disqus = document.querySelector('#disqus_thread')
+  // const removeAds = setInterval(() => {
+  //   let iframes = document.querySelectorAll('iframe')
 
-    for (var iframe in iframes) {
-      if (typeof iframes[iframe].src === 'undefined') {
-        continue;
-      }
+  //   for (var iframe in iframes) {
+  //     if (typeof iframes[iframe].src === 'undefined') {
+  //       continue;
+  //     }
 
-      if (iframes[iframe].src.match(/(ads-iframe)|(disqusads)/gi)) {
-        iframes[iframe].style.display = 'none';
-        disqus.style.width = '100%';
-      }
-    }
-  }, 500)
+  //     if (iframes[iframe].src.match(/(ads-iframe)|(disqusads)/gi)) {
+  //       iframes[iframe].style.display = 'none';
+  //       disqus.style.width = '100%';
+  //     }
+  //   }
+  // }, 500)
 
-  setTimeout(() => {
-    clearInterval(removeAds)
-  }, 5000)
+  // setTimeout(() => {
+  //   clearInterval(removeAds)
+  // }, 5000)
 
   window.refreshFn = function () {
     initAdjust()
