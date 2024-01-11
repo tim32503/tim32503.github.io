@@ -590,9 +590,9 @@ google_adsense:
   enable_page_level_ads: true
 
 # Insert ads manually (手動插入廣告)
-# ad:
-#   index:
-#   aside:
+ad:
+  # index: '<script type="text/javascript"> cv_ad_options = { ad_slot_id:  "5c3e2c18a4f1cb51985e40e45e995182", ad_width: "468", ad_height: "60", mode: "production" }; </script><script text="text/javascript" src="//cdn.adotone.com/adslots/va.ads.js"></script>'
+  aside: '<script type="text/javascript"> cv_ad_options = { ad_slot_id: "edb2f37f0a0db578badce273bbd854ab", ad_width: "180", ad_height: "280", mode:  "production" }; </script><script text="text/javascript" src="//cdn.adotone.com/adslots/va.ads.js"></script>'
 #   post:
 
 # Verification (站長驗證)
