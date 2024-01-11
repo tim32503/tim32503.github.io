@@ -5,7 +5,7 @@ updated: 2019-09-11 12:30:00
 categories: [技術筆記, 錯誤排除]
 tags: [VB.NET, Access Database]
 toc: true
-cover: /2019/09/11/access-database-error/cover.png
+cover: /2019/09/11/access-database-error/cover.webp
 ---
 
 當出現「Microsoft.ACE.OLEDB.12.0 提供者並未登錄於本機電腦」錯誤訊息時，可參考本文以透過安裝套件來排除問題。
