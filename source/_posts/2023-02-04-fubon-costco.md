@@ -6,6 +6,7 @@ categories: [投資理財]
 tags: [理財, 信用卡, 新卡上路]
 toc: true
 cover: /2023/02/04/fubon-costco/cover.webp
+top_img: /2023/02/04/fubon-costco/top_image.webp
 ---
 
 萬眾矚目的 **富邦 Costco 聯名卡** 在 **2023/02/01** 正式發行啦！就讓我們來了解一下這張充滿話題性的卡片吧！
