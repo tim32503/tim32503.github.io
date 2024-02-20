@@ -5,7 +5,7 @@ updated: 2019-09-16 11:18:00
 categories: [技術筆記, 錯誤排除]
 tags: [VB.NET]
 toc: true
-cover: /2019/09/16/unrecognized-targetframework/cover.webp
+cover: cover.webp
 ---
 
 出現「無法辨認的屬性 ‘targetFramework’。請注意，屬性名稱必須區分大小寫」的錯誤訊息時，可嘗試透過文中方法排除問題。

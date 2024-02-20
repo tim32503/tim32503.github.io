@@ -4,7 +4,7 @@ date: 2019-09-17 16:20:00
 updated: 2019-09-17 16:20:00
 categories: [技術筆記, 錯誤排除]
 tags: [VB.NET, Oracle]
-cover: /2019/09/17/bad-image-format-exception-for-oracle/cover.webp
+cover: cover.webp
 toc: true
 ---
 

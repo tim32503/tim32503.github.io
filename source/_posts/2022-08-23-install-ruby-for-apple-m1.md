@@ -5,7 +5,7 @@ updated: 2022-08-23 13:56:00
 categories: [技術筆記, 都是M1惹的禍？]
 tags: [Ruby, Mac M1]
 toc: true
-cover: /2022/08/23/install-ruby-for-apple-m1/cover.webp
+cover: cover.webp
 ---
 
 之前耳聞過 Mac M1 在環境安裝會遇到不少問題⋯⋯本篇將帶你一起解決安裝 Ruby 環境時的疑難雜症！

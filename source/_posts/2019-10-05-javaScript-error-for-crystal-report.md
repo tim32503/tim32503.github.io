@@ -4,7 +4,7 @@ date: 2019-10-05 17:11:00
 updated: 2019-10-05 17:11:00
 categories: [技術筆記, 錯誤排除]
 tags: [VB.NET, Crystal Report, Javascript]
-cover: /2019/10/05/javaScript-error-for-crystal-report/cover.webp
+cover: cover.webp
 toc: true
 ---
 

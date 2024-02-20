@@ -4,8 +4,8 @@ date: 2024-02-11 16:16:58
 categories: [技術筆記]
 tags: [Rails, 錯誤處理, Yarn, cssbundling-rails, jsbundling-rails]
 toc: true
-cover: /2024/02/11/command-build-failed/cover.webp
-top_img: /2024/02/11/command-build-failed/top_image.webp
+cover: cover.webp
+top_img: top_image.webp
 ---
 
 最近在練習做 Side project 的時候，發現每次將 commit 推上去到 GitHub 後，CI 都會一直出現 `yarn build:css` 的錯誤，花了很久的時間才總算裡出一些頭緒...

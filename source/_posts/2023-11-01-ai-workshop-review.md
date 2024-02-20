@@ -4,8 +4,8 @@ date: 2023-11-01 22:59:41
 categories: [技術筆記]
 tags: [AI, 生成式 AI, LLM, 大語言模型, 五倍學院, 工作坊, 心得分享]
 toc: true
-cover: /2023/11/01/ai-workshop-review/cover.webp
-top_img: /2023/11/01/ai-workshop-review/top_image.webp
+cover: cover.webp
+top_img: top_image.webp
 ---
 
 自從 ChatGPT 爆紅後，人們開始更加關注 AI 接下來的發展與應用，甚至 2023 年更被譽為「生成式 AI 元年」。各領域也不斷地尋找 AI 適用的應用情境，思考著能如何用來提升工作效率及增加利潤。然而，身為工程師的我們當面對這樣的新技術誕生時，更不該因為害怕被新技術取代而拒絕去認識它；反之，我們更該嘗試認識它，看能藉由何種方式來幫助提升自我的價值。

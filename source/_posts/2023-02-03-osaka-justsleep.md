@@ -5,7 +5,7 @@ updated: 2023-02-03 23:23:00
 categories: [優惠折扣, KLOOK優惠折扣快報]
 tags: [KLOOK, 旅遊, 優惠, 折扣]
 toc: true
-cover: /2023/02/03/osaka-justsleep/cover.webp
+cover: cover.webp
 ---
 
 「捷絲旅」這個耳熟能詳的旅店品牌如今開始向海外拓展事業版圖，就讓我們來看看他們海外首站選擇在哪吧！
@@ -31,20 +31,20 @@ cover: /2023/02/03/osaka-justsleep/cover.webp
 「捷絲旅大阪心齋橋」是捷絲旅品牌進軍日本的首家據點，飯店位置緊鄰熱鬧繁華的心齋橋商圈，商圈內美食店舖林立，房客步行即可沉浸式的體驗在地潮流文化與熱情好客的風土民情。
 
 {% gallery true %}
-![](/2023/02/03/osaka-justsleep/內部-1.webp)
-![](/2023/02/03/osaka-justsleep/內部-2.webp)
+![](內部-1.webp)
+![](內部-2.webp)
 {% endgallery %}
 
 踏入飯店大廳，映入眼簾的是充滿心齋橋美國村的設計牆面，帶領旅人彷彿走進 70 年代的時光隧道般，使人能在這忘卻旅途的辛勞。
 
 {% gallery true, 150 %}
-![](/2023/02/03/osaka-justsleep/雅心客房.webp)
-![](/2023/02/03/osaka-justsleep/雅心客房-1.webp)
-![](/2023/02/03/osaka-justsleep/雅齋客房.webp)
-![](/2023/02/03/osaka-justsleep/雅齋客房-1.webp)
-![](/2023/02/03/osaka-justsleep/雅橋客房.webp)
-![](/2023/02/03/osaka-justsleep/雅橋客房-1.webp)
-![](/2023/02/03/osaka-justsleep/衛浴.webp)
+![](雅心客房.webp)
+![](雅心客房-1.webp)
+![](雅齋客房.webp)
+![](雅齋客房-1.webp)
+![](雅橋客房.webp)
+![](雅橋客房-1.webp)
+![](衛浴.webp)
 {% endgallery %}
 
 飯店對外交通四通八達，心齋橋站、本町站、筋堺本町及長堀橋站等四大地鐵車站近在咫尺，便利性十足，絕對是旅人規劃大阪行時的住宿首選。
