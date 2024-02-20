@@ -3,7 +3,7 @@ title: 都是 M1 惹的禍？連 Bundler 也遭殃？！
 date: 2022-08-23 16:35:00
 updated: 2022-08-23 16:35:00
 categories: [技術筆記, 都是M1惹的禍？]
-tags: [Ruby, Ruby on Rails, Mimemagic, Mysql2]
+tags: [Ruby, Rails, Mimemagic, Mysql2]
 toc: true
 cover: cover.webp
 ---
