@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>tutorial-about-flyio</title>
+      <link href="/2024/02/20/tutorial-about-flyio/"/>
+      <url>/2024/02/20/tutorial-about-flyio/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Yarn 指令建置失敗！</title>
       <link href="/2024/02/11/command-build-failed/"/>
       <url>/2024/02/11/command-build-failed/</url>
@@ -37,11 +50,11 @@
     
     
     <entry>
-      <title>AI 工作坊 – 課後心得</title>
+      <title>與 AI 對話！ LLM 應用開發工作坊心得分享！</title>
       <link href="/2023/11/01/ai-workshop-review/"/>
       <url>/2023/11/01/ai-workshop-review/</url>
       
-        <content type="html"><![CDATA[<p>自從 ChatGPT 爆紅後，人們開始更加關注 AI 接下來的發展與應用，甚至 2023 年更被譽為「生成式 AI 元年」。各領域也不斷地尋找 AI 適用的應用情境，思考著能如何用來提升工作效率及增加利潤。然而，身為工程師的我們當面對這樣的新技術誕生時，更不該因為害怕被新技術取代而拒絕去認識它；反之，我們更該嘗試認識它，看能藉由何種方式來幫助提升自我的價值。</p><span id="more"></span><h2 id="課程資訊">課程資訊</h2><div class="note info flat"><p><strong>大語言模型 LLM 應用開發工作坊</strong></p><p>【講師】張文鈿（ihower）<br>【時間】2023/10/15 (日) 10:00 ~ 17:00<br>【地點】五倍紅寶石<br>【簡介】<a href="https://5xcampus.com/courses/ai-workshop">請點我</a></p></div><h2 id="麻瓜的有勇無謀">麻瓜的有勇無謀</h2><p>在開始上課前，我想我對於 AI 的認識就和普羅大眾差不多吧！</p><p>透過 ChatGPT<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> 、 Google Bard<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> 等工具協助我們寫文章、找答案，幾乎都快成了 24 小時 On Call 、不須下班的私人家教；在 DALL·E2<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> 、 Midjourney<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> 的畫布上用提示詞揮灑出屬於我們的創作，誤以為自己是 21 世紀的畢卡索再世。一晃眼間，許多的 AI 應用網站推陳出新，便已令眾人愛不釋手、陶醉其中。</p><p>而比較深入一些的認識，應該就是開始了解「何謂提示詞」了吧！</p><p>畢竟在網路上各式各樣的咒語心得文唾手可得，像是教會你如何「成為宮崎駿第二人」、「快速解開程式難題」等等。這類型的分享文章好似咒語百科般數之不盡，多到不禁讓人幻想著是否自己信手捻來便能像哈利波特一樣與「那個人」交戰。網友們口中所謂的「咒語」正是生成式 AI 使用到的「提示詞（Prompt）」，但我們像麻瓜般的有勇無謀，只是一味的使出咒語來自娛娛人，卻不知其中潛藏的危險性。</p><h2 id="符咒學，上課了！">符咒學，上課了！</h2><p>起初，講者先是帶著我們認識何謂提示詞。我們都知道使用咒語需要手持魔杖、專心一志並且大聲唸出咒語，而工程師想使用 LLM 也只需要透過呼叫 API 並且帶入所需參數及提示詞後便能完成。例如，在相同的提示詞（咒語）之下，若帶入的「溫度（temperature）」數值越接近 1 時，API 的回應及隨機性會更富有創造力；反之，越接近 0 的回覆則更接近機器人般的制式回答。原來只是簡單調整其中這麼一項參數，就能使 AI 的回答更加人性化！</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">user_message = <span class="string">&quot;小明愛吃什麼? &quot;</span></span><br><span class="line"></span><br><span class="line">messages = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>,</span><br><span class="line">        <span class="string">&quot;content&quot;</span>: user_message</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">response = get_completion(messages, temperature=<span class="number">0.9</span>)  <span class="comment"># 可以改看看溫度</span></span><br><span class="line"><span class="built_in">print</span>(response)  <span class="comment"># 我不知道小明喜歡吃什麼，因為我不認識他。每個人都有自己喜歡的食物偏好，只有小明自己知道他愛吃什麼。</span></span><br></pre></td></tr></table></figure><h2 id="大腦高速運轉後的收穫">大腦高速運轉後的收穫</h2><p>講者帶來的內容著實豐富，從基礎到進階、玲琅滿目。隨著課程進度來到進階篇章時，大腦也早已處於高速運轉的狀態中。講師在介紹完「提示詞工程」後，便帶領我們認識 LLM 的幾種常見應用，像是：ChatBot 對話應用、摘要轉錄、QA 應用等等。</p><img src="/2023/11/01/ai-workshop-review/p1.webp" class="" title="【圖片出處】edX LLM Application through Production 課程"><p>而大家最感到興趣的莫過於從早上就開始敲碗的應用主題－－「語意搜尋 + QA 應用」，簡單來說就是先使用程式去搜尋各種相關內容後，再將收集到的資訊及問題拿去問 LLM ，最後就可以得到所需的答案了！整個問答流程前後完全不需要耗費太多時間，也難怪在 ChatGPT 剛問世不久時就已經有客服人員開始擔心自己會不會面臨失業的困境。</p><p>在認識完幾種常見應用後，該如何將 LLM 妥善運用至各種情境中，讓其成為一大助力，我想這便是軟體工程師的價值其一所在吧！</p><h2 id="結語">結語</h2><p>這堂課確實為我打開 AI 世界大門，儘管尚未能完全掌握課程的全部精華，但至少在我的心中已經埋下一顆對於 AI 好奇心的種子。課程結束不是終點，學海無涯，唯勤是岸，期許自己將講師的豐富教材仔細著墨後，能促使自己躍上另一境界！如果對於 AI 這門學問也甚是好奇，不妨藉由這堂課程帶領你一探箇中奧妙，相信定有所獲的！</p><h2 id="參考來源">參考來源</h2><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p><a href="https://openai.com/chatgpt">對話式 AI 工具 – ChatGPT by OpenAI</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p></li><li id="fn2" class="footnote-item"><p><a href="https://bard.google.com/chat">對話式 AI 工具 – Bard by Google</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p></li><li id="fn3" class="footnote-item"><p><a href="https://openai.com/dall-e-2">生成式 AI 繪圖工具 – DALL·E 2 by OpenAI</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p></li><li id="fn4" class="footnote-item"><p><a href="https://www.midjourney.com/home">生成式 AI 繪圖工具 – Midjourney by Midjourney</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
+        <content type="html"><![CDATA[<p>自從 ChatGPT 爆紅後，人們開始更加關注 AI 接下來的發展與應用，甚至 2023 年更被譽為「生成式 AI 元年」。各領域也不斷地尋找 AI 適用的應用情境，思考著能如何用來提升工作效率及增加利潤。然而，身為工程師的我們當面對這樣的新技術誕生時，更不該因為害怕被新技術取代而拒絕去認識它；反之，我們更該嘗試認識它，看能藉由何種方式來幫助提升自我的價值。</p><span id="more"></span><img src="/2023/11/01/ai-workshop-review/5xcampus_post_cover.webp" class="" title="【圖片出處】Facebook 粉絲專頁 - 五倍學院"><h2 id="課程資訊">課程資訊</h2><div class="note info flat"><p><strong>大語言模型 LLM 應用開發工作坊</strong></p><p>【講師】張文鈿（ihower）<br>【時間】2023/10/15 (日) 10:00 ~ 17:00<br>【地點】五倍紅寶石<br>【簡介】<a href="https://5xcampus.com/courses/ai-workshop.html?utm_source=curihaosity&amp;utm_medium=post">請點我</a></p></div><h2 id="麻瓜的有勇無謀">麻瓜的有勇無謀</h2><p>在開始上課前，我想我對於 AI 的認識就和普羅大眾差不多吧！</p><p>透過 ChatGPT<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> 、 Google Bard<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> 等工具協助我們寫文章、找答案，幾乎都快成了 24 小時 On Call 、不須下班的私人家教；在 DALL·E2<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> 、 Midjourney<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> 的畫布上用提示詞揮灑出屬於我們的創作，誤以為自己是 21 世紀的畢卡索再世。一晃眼間，許多的 AI 應用網站推陳出新，便已令眾人愛不釋手、陶醉其中。</p><p>而比較深入一些的認識，應該就是開始了解「何謂提示詞」了吧！</p><p>畢竟在網路上各式各樣的咒語心得文唾手可得，像是教會你如何「成為宮崎駿第二人」、「快速解開程式難題」等等。這類型的分享文章好似咒語百科般數之不盡，多到不禁讓人幻想著是否自己信手捻來便能像哈利波特一樣與「那個人」交戰。網友們口中所謂的「咒語」正是生成式 AI 使用到的「提示詞（Prompt）」，但我們像麻瓜般的有勇無謀，只是一味的使出咒語來自娛娛人，卻不知其中潛藏的危險性。</p><h2 id="符咒學，上課了！">符咒學，上課了！</h2><p>起初，講者先是帶著我們認識何謂提示詞。我們都知道使用咒語需要手持魔杖、專心一志並且大聲唸出咒語，而工程師想使用 LLM 也只需要透過呼叫 API 並且帶入所需參數及提示詞後便能完成。例如，在相同的提示詞（咒語）之下，若帶入的「溫度（temperature）」數值越接近 1 時，API 的回應及隨機性會更富有創造力；反之，越接近 0 的回覆則更接近機器人般的制式回答。原來只是簡單調整其中這麼一項參數，就能使 AI 的回答更加人性化！</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">user_message = <span class="string">&quot;小明愛吃什麼? &quot;</span></span><br><span class="line"></span><br><span class="line">messages = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>,</span><br><span class="line">        <span class="string">&quot;content&quot;</span>: user_message</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">response = get_completion(messages, temperature=<span class="number">0.9</span>)  <span class="comment"># 可以改看看溫度</span></span><br><span class="line"><span class="built_in">print</span>(response)  <span class="comment"># 我不知道小明喜歡吃什麼，因為我不認識他。每個人都有自己喜歡的食物偏好，只有小明自己知道他愛吃什麼。</span></span><br></pre></td></tr></table></figure><h2 id="大腦高速運轉後的收穫">大腦高速運轉後的收穫</h2><p>講者帶來的內容著實豐富，從基礎到進階、玲琅滿目。隨著課程進度來到進階篇章時，大腦也早已處於高速運轉的狀態中。講師在介紹完「提示詞工程」後，便帶領我們認識 LLM 的幾種常見應用，像是：ChatBot 對話應用、摘要轉錄、QA 應用等等。</p><img src="/2023/11/01/ai-workshop-review/p1.webp" class="" title="【圖片出處】edX LLM Application through Production 課程"><p>而大家最感到興趣的莫過於從早上就開始敲碗的應用主題－－「語意搜尋 + QA 應用」，簡單來說就是先使用程式去搜尋各種相關內容後，再將收集到的資訊及問題拿去問 LLM ，最後就可以得到所需的答案了！整個問答流程前後完全不需要耗費太多時間，也難怪在 ChatGPT 剛問世不久時就已經有客服人員開始擔心自己會不會面臨失業的困境。</p><p>在認識完幾種常見應用後，該如何將 LLM 妥善運用至各種情境中，讓其成為一大助力，我想這便是軟體工程師的價值其一所在吧！</p><h2 id="結語">結語</h2><p>這堂課確實為我打開 AI 世界大門，儘管尚未能完全掌握課程的全部精華，但至少在我的心中已經埋下一顆對於 AI 好奇心的種子。課程結束不是終點，學海無涯，唯勤是岸，期許自己將講師的豐富教材仔細著墨後，能促使自己躍上另一境界！如果對於 AI 這門學問也甚是好奇，不妨藉由這堂課程帶領你一探箇中奧妙，相信定有所獲的！</p><h2 id="參考來源">參考來源</h2><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p><a href="https://openai.com/chatgpt">對話式 AI 工具 – ChatGPT by OpenAI</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p></li><li id="fn2" class="footnote-item"><p><a href="https://bard.google.com/chat">對話式 AI 工具 – Bard by Google</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p></li><li id="fn3" class="footnote-item"><p><a href="https://openai.com/dall-e-2">生成式 AI 繪圖工具 – DALL·E 2 by OpenAI</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p></li><li id="fn4" class="footnote-item"><p><a href="https://www.midjourney.com/home">生成式 AI 繪圖工具 – Midjourney by Midjourney</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
       
       
       <categories>
@@ -55,11 +68,17 @@
             
             <tag> AI </tag>
             
+            <tag> 生成式 AI </tag>
+            
             <tag> LLM </tag>
+            
+            <tag> 大語言模型 </tag>
             
             <tag> 五倍學院 </tag>
             
             <tag> 工作坊 </tag>
+            
+            <tag> 心得分享 </tag>
             
         </tags>
       
