@@ -1,8 +1,8 @@
 ---
-title: AI 工作坊 – 課後心得
+title: 與 AI 對話！ LLM 應用開發工作坊心得分享！
 date: 2023-11-01 22:59:41
 categories: [技術筆記]
-tags: [AI, LLM, 五倍學院, 工作坊]
+tags: [AI, 生成式 AI, LLM, 大語言模型, 五倍學院, 工作坊, 心得分享]
 toc: true
 cover: /2023/11/01/ai-workshop-review/cover.webp
 top_img: /2023/11/01/ai-workshop-review/top_image.webp
@@ -12,6 +12,8 @@ top_img: /2023/11/01/ai-workshop-review/top_image.webp
 
 <!-- more -->
 
+{% asset_img 5xcampus_post_cover.webp "【圖片出處】Facebook 粉絲專頁 - 五倍學院" %}
+
 ## 課程資訊
 
 {% note info %}
@@ -20,7 +22,7 @@ top_img: /2023/11/01/ai-workshop-review/top_image.webp
 【講師】張文鈿（ihower）
 【時間】2023/10/15 (日) 10:00 ~ 17:00
 【地點】五倍紅寶石
-【簡介】[請點我](https://5xcampus.com/courses/ai-workshop)
+【簡介】[請點我](https://5xcampus.com/courses/ai-workshop.html?utm_source=curihaosity&utm_medium=post)
 {% endnote %}
 
 ## 麻瓜的有勇無謀
