@@ -183,14 +183,14 @@
   </url>
   
   <url>
-    <loc>https://curihaosity.xyz/tags/Access-Database/</loc>
+    <loc>https://curihaosity.xyz/tags/Oracle/</loc>
     <lastmod>2024-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://curihaosity.xyz/tags/Oracle/</loc>
+    <loc>https://curihaosity.xyz/tags/Access-Database/</loc>
     <lastmod>2024-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -260,13 +260,6 @@
   </url>
   
   <url>
-    <loc>https://curihaosity.xyz/tags/Mac-M1/</loc>
-    <lastmod>2024-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://curihaosity.xyz/tags/GitHub/</loc>
     <lastmod>2024-02-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -282,6 +275,13 @@
   
   <url>
     <loc>https://curihaosity.xyz/tags/Webhook/</loc>
+    <lastmod>2024-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://curihaosity.xyz/tags/Mac-M1/</loc>
     <lastmod>2024-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
