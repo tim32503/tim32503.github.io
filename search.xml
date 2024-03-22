@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>部署平台新寵兒！教你快速上手 Fly.io ！</title>
+      <link href="/2024/02/20/tutorial-about-flyio/"/>
+      <url>/2024/02/20/tutorial-about-flyio/</url>
+      
+        <content type="html"><![CDATA[<p>這篇文章主要記錄部署平台改用 Fly.io 的歷程，會簡單介紹整個部署流程以及曾遇過的問題。</p><span id="more"></span><h2 id="前言">前言</h2><p>還記得當時在 ASTRO Camp 時，總習慣用 Heroku 作為我的部署平台首選，沒有別的原因——就是因為免費！</p><p>不過由於平台官方考量<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，從 2022/10/26 起，Heroku 將開始刪除不活躍的帳號，直到 2022/11/28 將完全停止提供免費方案。<br>於是大家便開始苦尋下一個替代方案，而其中一個選擇就是這篇要介紹的 <strong><a href="https://fly.io/">Fly.io</a></strong> 啦！</p><div class="note info flat"><p>【網站名稱】Fly.io<br>【網站連結】<a href="https://fly.io/">https://fly.io/</a></p></div><h2 id="註冊">註冊</h2><p>Fly.io 支援第三方登入功能，所以可以直接透過 Google 或是 GitHub 帳號來註冊。<br>因為步驟蠻簡單的，所以這部分就先略過囉！<br>還是有疑問的話，可以在下方留言，如果我幫得上忙的話會盡力回覆的！</p><p>註冊完的重點是綁定信用卡！</p><p>Fly.io 有提供免費試用，但須先完成信用卡綁定，並且使用預設的 <code>Personal</code> 組織，不要另外自行建立新組織。<br>計畫選擇 <code>Hobby</code>，完成後，系統就會自動提供 5 美元的額度到 <code>Personal</code> 組織底下讓你使用，而這個額度是沒有使用期限<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>。<br>用完額度後系統就會開始按照 <code>Hobby</code> 計畫每個月自動扣款 5 美元，大家可以用免費額度來測試看看這個部署平台是否適合自己的需求～</p><h2 id="部署">部署</h2><p>正如 Fly.io 在官網首頁提及的特色，可以透過簡單的幾個指令就順利將專案部署上去！</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; 在 Mac OS 上安裝 flyctl 工具</span><br><span class="line">$ brew install flyctl</span><br><span class="line"></span><br><span class="line">&gt; 在專案中建立部署設定檔</span><br><span class="line">$ fly launch</span><br><span class="line"></span><br><span class="line">&gt; 執行部署作業</span><br><span class="line">$ fly deploy</span><br></pre></td></tr></table></figure><h2 id="問題處理">問題處理</h2><p>在使用這樣的新興平台，難免會遇到各式各種的問題需要解決。而他們家有提供了 Community 這樣的論壇，讓大家可以盡情發問，而這些留下來的問答紀錄就能在緊要關頭時幫上忙！<br>下面也紀錄了先前苦惱很久的部署問題，希望能幫大家避開地雷～</p><h3 id="為什麼我的-Rails-專案總是部署失敗…">為什麼我的 Rails 專案總是部署失敗…</h3><p>每次部署使用 <code>fly deploy</code> 的指令後，總是會出現下面的錯誤訊息：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">✖ release_command failed</span><br><span class="line">Error release_command failed running on machine e286000c340386 with <span class="built_in">exit</span> code 139.</span><br></pre></td></tr></table></figure><p>原本以為是錯誤訊息所說，跟 <code>release command</code> 有關，所以一直在研究 <code>Dockerfile</code> 及 <code>fly.toml</code> 設定黨哪裡有問題。<br>直到找到這篇文章<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>才解決了我的疑惑，原來一直失敗是跟我的 Ruby 版本有關。</p><p>因為在起初設定 VM 時，我只有將主機的記憶體大小設定使用 256 MB，而專案使用的 Ruby 版本則是使用 3.3。<br>根據文章的回答我推測應該是 Ruby 3.3 版在部署時需要較大一些的記憶體容量來去執行，<br>所以要解決這個問題就是將主機記憶體設定大一些即可。當然，如果要選擇降版至 3.2 也是可行的做法之一。</p><p>後來按照文章的建議，選擇將主機記憶體重新設定為 512 MB 後，便能順利部署成功了！</p><p>但畢竟當初會選擇將主機記憶體設定為 256 MB 也是因為免費額度的關係，改為設定 512 MB 後就開始被收費了。<br>如果只是想玩一些測試用的專案，這點就需要注意一下！</p><h2 id="參考資料">參考資料</h2><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p><a href="https://blog.heroku.com/next-chapter#focus-on-mission-critical">Heroku’s Next Chapter - Focus on Mission Critical</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p></li><li id="fn2" class="footnote-item"><p><a href="https://fly.io/docs/about/pricing/?source=post_page-----5f9f5cdb837b--------------------------------#new-customers">Fly.io Resource Pricing</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p></li><li id="fn3" class="footnote-item"><p><a href="https://community.fly.io/t/dockerfile-help-for-ruby-3-3-0/17700">DockerFile help for Ruby 3.3.0</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技術筆記 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Rails </tag>
+            
+            <tag> 錯誤處理 </tag>
+            
+            <tag> 部署平台 </tag>
+            
+            <tag> Fly.io </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Yarn 指令建置失敗！</title>
       <link href="/2024/02/11/command-build-failed/"/>
       <url>/2024/02/11/command-build-failed/</url>
@@ -156,7 +187,7 @@
             
             <tag> Ruby </tag>
             
-            <tag> Ruby on Rails </tag>
+            <tag> Rails </tag>
             
             <tag> Mimemagic </tag>
             
