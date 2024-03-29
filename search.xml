@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>無法在 Ubuntu 20 上部署？！撞牆筆記全記錄</title>
+      <link href="/2024/03/22/deploy-failed-on-ubuntu-20/"/>
+      <url>/2024/03/22/deploy-failed-on-ubuntu-20/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 技術筆記 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Rails </tag>
+            
+            <tag> 部署 </tag>
+            
+            <tag> AWS EC2 </tag>
+            
+            <tag> Ubuntu </tag>
+            
+            <tag> 錯誤處理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>部署平台新寵兒！教你快速上手 Fly.io ！</title>
       <link href="/2024/02/20/tutorial-about-flyio/"/>
       <url>/2024/02/20/tutorial-about-flyio/</url>
