@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>WSL 無法開啟 SQLite 檔案 | 顥奇心</title><meta name="author" content="兩盒"><meta name="copyright" content="兩盒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="由於上課所需，開始研究如何在 WSL 中安裝 SQLite Browser，結果意外發現有問題啊！！！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WSL 無法開啟 SQLite 檔案">
+<meta property="og:url" content="https://curihaosity.xyz/2021/04/08/cannot-open-sqlite-file-in-wsl/index.html">
+<meta property="og:site_name" content="顥奇心">
+<meta property="og:description" content="由於上課所需，開始研究如何在 WSL 中安裝 SQLite Browser，結果意外發現有問題啊！！！">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://curihaosity.xyz/2021/04/08/cannot-open-sqlite-file-in-wsl/cover.webp">
+<meta property="article:published_time" content="2021-04-08T09:30:00.000Z">
+<meta property="article:modified_time" content="2021-04-08T09:30:00.000Z">
+<meta property="article:author" content="兩盒">
+<meta property="article:tag" content="Windows PC">
+<meta property="article:tag" content="WSL">
+<meta property="article:tag" content="SQLite">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://curihaosity.xyz/2021/04/08/cannot-open-sqlite-file-in-wsl/cover.webp">
+<meta property="fb:app_id" content="1166430343777838"><link rel="shortcut icon" href="/images/favicon.ico"><link rel="canonical" href="https://curihaosity.xyz/2021/04/08/cannot-open-sqlite-file-in-wsl/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="ir-site-verification-token" content="740691780"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-9900343966683780',
+  enable_page_level_ads: 'true'
+});</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-WSJESSL5VK"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-WSJESSL5VK');
+</script><script async="async" src="https://platform-api.sharethis.com/js/sharethis.js#property=6584ff94658d5100133a575b&amp;product=inline-share-buttons&amp;source=platform"></script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"這篇文章距離上次更新已經超過","messageNext":"天，因此內容可能已過時。"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: false,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'WSL 無法開啟 SQLite 檔案',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-04-08 17:30:00'
+}
+</script><script type="application/ld+json">{
+  "@context" : "https://schema.org",
+  "@type" : "WebSite",
+  "name" : '顥奇心',
+  "url" : 'https://curihaosity.xyz'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/avatar.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">48</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">10</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/2021/04/08/cannot-open-sqlite-file-in-wsl/cover.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="顥奇心"><img class="site-icon" src="/images/logo.webp"/></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">WSL 無法開啟 SQLite 檔案</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2021-04-08T09:30:00.000Z" title="發表於 2021-04-08 17:30:00">2021-04-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2021-04-08T09:30:00.000Z" title="更新於 2021-04-08 17:30:00">2021-04-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/">技術筆記</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/%E9%8C%AF%E8%AA%A4%E6%8E%92%E9%99%A4/">錯誤排除</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="WSL 無法開啟 SQLite 檔案"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>由於上課所需，開始研究如何在 WSL 中安裝 SQLite Browser，結果意外發現有問題啊！！！</p>
+<span id="more"></span>
+<h2 id="安裝">安裝</h2>
+<p>因為龍哥說明天要用學資料庫，所以請同學們安裝 <strong>SQLite Browser</strong> ，於是便進到官網開始查安裝說明。</p>
+<div class="note info flat"><p>【應用程式名稱】SQLite Browser<br>
+【官網連結】<a class="btn-beautify " target="_blank" rel="noopener" href="https://sqlitebrowser.org/" 
+  title="請點我"><span>請點我</span></a></p>
+</div>
+<p>因應各家系統，所以安裝方式也非常及 MacOS 多，除了 Windows 及 macOS 可以直接下載安裝檔以外，Linux 系統也可以透過指令去下載。</p>
+<p>由於課程開始時，龍哥建議使用 Windows 系統的學生們可以安裝 WSL 來作為 Ruby 開發環境。所以這邊應用程式的安裝，我就打算直接透過 Linux 的終端機來安裝，而不是直接下載 Windows 安裝檔。而我的 Linux 系統是使用 Ubuntu 20.04 LTS ，我就採用 APT 指令方式下載。</p>
+<p>首先我們先更新 APT 的 cache</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<p>更新完成後再繼續接著安裝應用程式本體！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install sqlitebrowser</span><br></pre></td></tr></table></figure>
+<p>不過想小小吐槽一下的是 APT 指令安裝完成後，這個應用程式不會回傳安裝完成之類的訊息…<br>
+讓人不太確定到底安裝好了沒啊😅😅😅</p>
+<p>OK！沒關係，反正我嘗試開啟 SQLite 檔案就會知道有沒有安裝成功了吧！</p>
+<p>下一步我們透過檔案總管的方式來找到想要開啟的 SQLite 檔案，剛好我們手邊有建立一個練習用的 Rails 專案，我們直接用裡面的 SQLite 檔案來測試看看。</p>
+<img src="/2021/04/08/cannot-open-sqlite-file-in-wsl/p1.webp" class="">
+<p>看到 SQLite 檔案就給他用力地點下去！！！</p>
+<img src="/2021/04/08/cannot-open-sqlite-file-in-wsl/p2.webp" class="">
+<p>⚠️⚠️⚠️ 登愣 ⚠️⚠️⚠️<br>
+為什麼會出現錯誤訊息啦！雖然我很開心有安裝成功😭<br>
+看了一下上頭的錯誤訊息…<br>
+我傻眼，我什麼事情都還沒做怎麼會資料庫被鎖定啦！</p>
+<div class="note warning flat"><p>Could not open database file.<br>
+Reason: database is locked</p>
+</div>
+<p>好吧！看來只能求助 Google 大神了！<br>
+最後找到一篇比較近期發問的文章，進去閱讀後才發現原來是 SQLite Browser 的 GitHub 頁面。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/sqlitebrowser/sqlitebrowser/issues/2142">SQLite Browser fails to open a DB inside a wsl2 installation #2142</a></p>
+<p>看完整串網友們的討論後，結論是目前沒救😭<br>
+簡單來說目前 WSL 的關係，會導致所有儲存在其之下的 sqlite 檔案被鎖定，無法正常開啟。但開發者大大們目前似乎有想法，該如何解決這個問題，所以期待後續他們的更新改版囉！<br>
+如果現階段真的需要開啟檔案的話，可以先將 SQLite 檔案移至 Windows 環境底下的任一位置後 (例如桌面)，就可以直接點擊開啟該資料庫囉！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://curihaosity.xyz">兩盒</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章連結: </span><span class="post-copyright-info"><a href="https://curihaosity.xyz/2021/04/08/cannot-open-sqlite-file-in-wsl/">https://curihaosity.xyz/2021/04/08/cannot-open-sqlite-file-in-wsl/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 許可協議。轉載請註明來自 <a href="https://curihaosity.xyz" target="_blank">顥奇心</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Windows-PC/">Windows PC</a><a class="post-meta__tags" href="/tags/WSL/">WSL</a><a class="post-meta__tags" href="/tags/SQLite/">SQLite</a></div><div class="post_share"><div class="sharethis-inline-share-buttons"></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/04/25/github-notifications-in-discord/" title="用 Discord 接收 GitHub 通知"><img class="cover" src="/2021/04/25/github-notifications-in-discord/cover.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">用 Discord 接收 GitHub 通知</div></div></a></div><div class="next-post pull-right"><a href="/2019/10/05/javaScript-error-for-crystal-report/" title="水晶報表發生 JavaScript 執行階段錯誤"><img class="cover" src="/2019/10/05/javaScript-error-for-crystal-report/cover.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">水晶報表發生 JavaScript 執行階段錯誤</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 評論</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/avatar.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">兩盒</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">48</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">10</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://instagram.com/curihaosity"><i class="fab fa-instagram"></i><span>追蹤我</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%9D"><span class="toc-number">1.</span> <span class="toc-text">安裝</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/03/22/deploy-failed-on-ubuntu-20/" title="無法在 Ubuntu 20 上部署？！撞牆筆記全記錄"><img src="/2024/03/22/deploy-failed-on-ubuntu-20/cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="無法在 Ubuntu 20 上部署？！撞牆筆記全記錄"/></a><div class="content"><a class="title" href="/2024/03/22/deploy-failed-on-ubuntu-20/" title="無法在 Ubuntu 20 上部署？！撞牆筆記全記錄">無法在 Ubuntu 20 上部署？！撞牆筆記全記錄</a><time datetime="2024-03-22T07:30:00.000Z" title="發表於 2024-03-22 15:30:00">2024-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/20/tutorial-about-flyio/" title="部署平台新寵兒！教你快速上手 Fly.io ！"><img src="/2024/02/20/tutorial-about-flyio/cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="部署平台新寵兒！教你快速上手 Fly.io ！"/></a><div class="content"><a class="title" href="/2024/02/20/tutorial-about-flyio/" title="部署平台新寵兒！教你快速上手 Fly.io ！">部署平台新寵兒！教你快速上手 Fly.io ！</a><time datetime="2024-02-20T05:10:24.000Z" title="發表於 2024-02-20 13:10:24">2024-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/11/command-build-failed/" title="Yarn 指令建置失敗！"><img src="/2024/02/11/command-build-failed/cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Yarn 指令建置失敗！"/></a><div class="content"><a class="title" href="/2024/02/11/command-build-failed/" title="Yarn 指令建置失敗！">Yarn 指令建置失敗！</a><time datetime="2024-02-11T08:16:58.000Z" title="發表於 2024-02-11 16:16:58">2024-02-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/01/ai-workshop-review/" title="與 AI 對話！ LLM 應用開發工作坊心得分享！"><img src="/2023/11/01/ai-workshop-review/cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="與 AI 對話！ LLM 應用開發工作坊心得分享！"/></a><div class="content"><a class="title" href="/2023/11/01/ai-workshop-review/" title="與 AI 對話！ LLM 應用開發工作坊心得分享！">與 AI 對話！ LLM 應用開發工作坊心得分享！</a><time datetime="2023-11-01T14:59:41.000Z" title="發表於 2023-11-01 22:59:41">2023-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/04/fubon-costco/" title="新卡上路！富邦 Costco 聯名卡懶人包"><img src="/2023/02/04/fubon-costco/cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="新卡上路！富邦 Costco 聯名卡懶人包"/></a><div class="content"><a class="title" href="/2023/02/04/fubon-costco/" title="新卡上路！富邦 Costco 聯名卡懶人包">新卡上路！富邦 Costco 聯名卡懶人包</a><time datetime="2023-02-04T11:20:21.000Z" title="發表於 2023-02-04 19:20:21">2023-02-04</time></div></div></div></div><div class="card-widget ads-wrap is-center"><script type="text/javascript"> cv_ad_options = { ad_slot_id: "edb2f37f0a0db578badce273bbd854ab", ad_width: "180", ad_height: "280", mode:  "production" }; </script><script text="text/javascript" src="//cdn.adotone.com/adslots/va.ads.js"></script></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By 兩盒</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直達評論"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="返回頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const disqus_config = function () {
+    this.page.url = 'https://curihaosity.xyz/2021/04/08/cannot-open-sqlite-file-in-wsl/'
+    this.page.identifier = '/2021/04/08/cannot-open-sqlite-file-in-wsl/'
+    this.page.title = 'WSL 無法開啟 SQLite 檔案'
+  }
+
+  const disqusReset = () => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addGlobalFn('themeChange', disqusReset, 'disqus')
+
+  const loadDisqus = () =>{
+    if (window.DISQUS) disqusReset()
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://curihaosity.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=curihaosity&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
