@@ -290,13 +290,6 @@
   </url>
   
   <url>
-    <loc>https://curihaosity.xyz/tags/Mac-M1/</loc>
-    <lastmod>2024-04-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://curihaosity.xyz/tags/%E6%96%B0%E5%8A%A0%E5%9D%A1/</loc>
     <lastmod>2024-04-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -388,6 +381,34 @@
   </url>
   
   <url>
+    <loc>https://curihaosity.xyz/tags/Mac-M1/</loc>
+    <lastmod>2024-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://curihaosity.xyz/tags/%E9%83%A8%E7%BD%B2%E5%B9%B3%E5%8F%B0/</loc>
+    <lastmod>2024-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://curihaosity.xyz/tags/Fly-io/</loc>
+    <lastmod>2024-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://curihaosity.xyz/tags/%E9%8C%AF%E8%AA%A4%E8%99%95%E7%90%86/</loc>
+    <lastmod>2024-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://curihaosity.xyz/tags/AI/</loc>
     <lastmod>2024-04-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -437,7 +458,21 @@
   </url>
   
   <url>
-    <loc>https://curihaosity.xyz/tags/%E9%8C%AF%E8%AA%A4%E8%99%95%E7%90%86/</loc>
+    <loc>https://curihaosity.xyz/tags/%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2024-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://curihaosity.xyz/tags/AWS-EC2/</loc>
+    <lastmod>2024-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://curihaosity.xyz/tags/Ubuntu/</loc>
     <lastmod>2024-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -459,41 +494,6 @@
   
   <url>
     <loc>https://curihaosity.xyz/tags/jsbundling-rails/</loc>
-    <lastmod>2024-04-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://curihaosity.xyz/tags/%E9%83%A8%E7%BD%B2%E5%B9%B3%E5%8F%B0/</loc>
-    <lastmod>2024-04-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://curihaosity.xyz/tags/Fly-io/</loc>
-    <lastmod>2024-04-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://curihaosity.xyz/tags/%E9%83%A8%E7%BD%B2/</loc>
-    <lastmod>2024-04-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://curihaosity.xyz/tags/AWS-EC2/</loc>
-    <lastmod>2024-04-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://curihaosity.xyz/tags/Ubuntu/</loc>
     <lastmod>2024-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -537,20 +537,6 @@
   </url>
   
   <url>
-    <loc>https://curihaosity.xyz/categories/%E6%8A%95%E8%B3%87%E7%90%86%E8%B2%A1/</loc>
-    <lastmod>2024-04-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://curihaosity.xyz/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2024-04-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://curihaosity.xyz/categories/%E6%97%85%E9%81%8A%E7%B4%80%E9%8C%84/%F0%9F%90%B0%E5%85%94%E9%A3%9B%E6%96%B0%E5%8A%A0%E5%9D%A1/</loc>
     <lastmod>2024-04-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -559,6 +545,20 @@
   
   <url>
     <loc>https://curihaosity.xyz/categories/%E5%84%AA%E6%83%A0%E6%8A%98%E6%89%A3/KLOOK%E5%84%AA%E6%83%A0%E6%8A%98%E6%89%A3%E5%BF%AB%E5%A0%B1/</loc>
+    <lastmod>2024-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://curihaosity.xyz/categories/%E6%8A%95%E8%B3%87%E7%90%86%E8%B2%A1/</loc>
+    <lastmod>2024-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://curihaosity.xyz/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2024-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
