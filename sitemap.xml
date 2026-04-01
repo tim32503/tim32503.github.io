@@ -346,27 +346,6 @@
   </url>
   
   <url>
-    <loc>https://curihaosity.xyz/tags/%E7%90%86%E8%B2%A1/</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://curihaosity.xyz/tags/%E4%BF%A1%E7%94%A8%E5%8D%A1/</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://curihaosity.xyz/tags/%E6%96%B0%E5%8D%A1%E4%B8%8A%E8%B7%AF/</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://curihaosity.xyz/tags/ASTRO-Camp/</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -382,6 +361,27 @@
   
   <url>
     <loc>https://curihaosity.xyz/tags/%E4%BA%94%E5%80%8D%E7%B4%85%E5%AF%B6%E7%9F%B3/</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://curihaosity.xyz/tags/%E7%90%86%E8%B2%A1/</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://curihaosity.xyz/tags/%E4%BF%A1%E7%94%A8%E5%8D%A1/</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://curihaosity.xyz/tags/%E6%96%B0%E5%8D%A1%E4%B8%8A%E8%B7%AF/</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -537,13 +537,6 @@
   </url>
   
   <url>
-    <loc>https://curihaosity.xyz/categories/%E6%8A%95%E8%B3%87%E7%90%86%E8%B2%A1/</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://curihaosity.xyz/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -566,6 +559,13 @@
   
   <url>
     <loc>https://curihaosity.xyz/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/%E9%80%B2%E4%BF%AE%E5%AD%B8%E7%BF%92/</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://curihaosity.xyz/categories/%E6%8A%95%E8%B3%87%E7%90%86%E8%B2%A1/</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
