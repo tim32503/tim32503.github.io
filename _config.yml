@@ -116,7 +116,7 @@ markdown:
     case: 0
     separator: '-'
   images:
-    lazyload: false
+    lazyload: true
     prepend_root: true
     post_asset: true
   inline: false  # https://markdown-it.github.io/markdown-it/#MarkdownIt.renderInline
